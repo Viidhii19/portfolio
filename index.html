@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comptible" content="IE=EDGE">
+    <meta name="viewpoint" content="width=device-width, initial scale=1.0">
+    <title>Vidhi Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: "Poppins", sans-serif;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: rgb(18, 18, 62);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(156, 156, 231);
+            font-size: 1.01rem;
+        }
+
+
+
+        .left {
+            font-size: 2rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-around;
+            margin: 60px 0;
+            align-items: center;
+        }
+
+        .firstSection>div {
+            width: 30%;
+
+        }
+
+        .leftSection {
+            font-size: 140%;
+            width: 80%;
+        }
+
+        .rightSection img {
+            width: 80%;
+            margin: 50px 0;
+        }
+
+        .text-gray {
+            color: gray;
+
+        }
+
+        .secondSection {
+            margin: auto;
+            max-width: 80vw;
+            height: 50vh;
+
+        }
+
+        .secondSection h1 {
+            font-size: 1.9rem;
+        }
+
+        .secondSection ol {
+            margin-top: 20px;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .secondSection ol li {
+            font-size: 1.2rem;
+        }
+
+        .thirdSection {
+            margin: auto;
+            max-width: 80vw;
+            height: 50vh;
+
+        }
+
+        .thirdSection h1 {
+            font-size: 1.9rem;
+        }
+
+        .thirdSection ol {
+            margin-top: 20px;
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+         .fourthSection {
+            margin: auto;
+            max-width: 80vw;
+            height: 30vh;
+
+        }
+    </style>
+
+</html>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Vidhi's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/vidhi-gandhi-a23990280" target="_blank">LinkedIn
+                            Profile</a></li>
+                    <li><a href="https://github.com/Viidhii19" target="_blank">Github Profile</a></li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, I’m Vidhi!
+                <div>A motivated and curious learner starting my journey in tech field.</div>
+
+                <span id="element"></span>
+            </div>
+
+            <div class="rightSection">
+                <img src="bg.jpeg" alt="image">
+            </div>
+        </section>
+
+        <section class="secondSection">
+            <span class="text-gray">What have I done so far</span>
+            <h1>Work Experience</h1>
+            <ol>
+                <li>YBi Foundation(August 2023 - September 2023):</li>
+                <p>Worked on Data Analytics, Machine Learning and
+                    statistical modelling to drive insights from complex datasets.</p>
+                <li>Java Development Intern(December2024-January 2025):</li>
+                <p>Worked on Java Fundamentals and gained hands on experience on language.</p>
+
+            </ol>
+        </section>
+
+        <section class="thirdSection">
+
+            <h1>Certifications</h1>
+            <ol>
+                <li>Java Certification Training Course by Simplilearn</li>
+                <li>Code Unnati Advanced Course 3.0</li>
+                <li>Foundations of Cybersecurity course offered by Google</li>
+                <li>DSA in Java and Multithreading in Java by Infosys SpringBoard</li>
+
+            </ol>
+        </section>
+
+        <section class="fourthSection">
+
+            <h1>Contact Me</h1>
+            <ul>
+                <li>Email Id      : vidhigandhi2004@gmail.com</li>
+                <li>Mobile Number : +91 9426084421 </li>
+
+            </ul>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['I’m passionate about building practical skills and exploring real-world projects that help me grow professionally.'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
