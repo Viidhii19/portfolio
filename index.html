@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Comptible" content="IE=EDGE">
-    <meta name="viewpoint" content="width=device-width, initial scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vidhi Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,13 +13,14 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             background-color: rgb(0, 0, 33);
             color: white;
             font-family: "Poppins", sans-serif;
-
+            line-height: 1.6;
         }
 
         nav {
@@ -38,12 +39,12 @@
         nav ul li {
             list-style: none;
             margin: 0 23px;
-
         }
 
         nav ul li a {
             text-decoration: none;
             color: white;
+            transition: 0.3s ease;
         }
 
         nav ul li a:hover {
@@ -51,117 +52,129 @@
             font-size: 1.01rem;
         }
 
-
-
         .left {
             font-size: 2rem;
+            font-weight: bold;
         }
 
         .firstSection {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
             margin: 60px 0;
             align-items: center;
+            padding: 0 20px;
         }
 
         .firstSection>div {
-            width: 30%;
-
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
         }
 
         .leftSection {
             font-size: 140%;
-            width: 80%;
         }
 
         .rightSection img {
-            width: 80%;
-            margin: 50px 0;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
         }
 
         .text-gray {
             color: gray;
-
         }
 
-        .secondSection {
+        section {
             margin: auto;
-            max-width: 80vw;
-            height: 50vh;
-
+            max-width: 90vw;
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .secondSection h1 {
+        section h1 {
             font-size: 1.9rem;
-        }
-
-        .secondSection ol {
-            margin-top: 20px;
-            padding-left: 20px;
-            line-height: 1.8;
-        }
-
-        .secondSection ol li {
-            font-size: 1.2rem;
-        }
-
-        .thirdSection {
-            margin: auto;
-            max-width: 80vw;
-            height: 50vh;
-
-        }
-
-        .thirdSection h1 {
-            font-size: 1.9rem;
-        }
-
-        .thirdSection ol {
-            margin-top: 20px;
-            padding-left: 20px;
-            line-height: 1.8;
-        }
-
-        .fourthSection {
-            margin: auto;
-            max-width: 80vw;
-            height: 60vh;
-        }
-
-        .fourthSection h1 {
-            font-size: 1.9rem;
-            margin-bottom: 15px;
-        }
-
-        .fourthSection ol {
-            margin-top: 20px;
-            padding-left: 20px;
-            line-height: 1.8;
-        }
-
-        .fourthSection ol li {
-            font-size: 1rem;
-        }
-
-
-        .contactme {
-            margin: auto;
-            max-width: 80vw;
-            height: 30vh;
-
-        }
-
-        .contactme h1 {
             margin-bottom: 20px;
         }
 
+        section ol {
+            padding-left: 20px;
+        }
+
+        section ol li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .projectBar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(28, 28, 78);
+            border-radius: 8px;
+            padding: 20px 30px;
+            margin: 15px 0;
+            transition: background 0.3s ease, transform 0.3s ease;
+            cursor: default;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .projectBar:hover {
+            background-color: rgb(36, 36, 90);
+            transform: scale(1.01);
+        }
+
+        .projectInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .projectTitle {
+            font-size: 1.3rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .projectRole {
+            font-size: 0.9rem;
+            color: #bbbbbb;
+        }
+
+        .projectDesc {
+            font-size: 1rem;
+            color: #dddddd;
+            max-width: 600px;
+        }
+
+        .projectLinkBtn {
+            background-color: #4e4eff;
+            color: white;
+            padding: 8px 14px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .projectLinkBtn:hover {
+            background-color: #3a3acf;
+        }
+
+
         .contactme ul {
             padding-left: 20px;
-            line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgb(18, 18, 62);
+            color: gray;
         }
     </style>
-
-</html>
 </head>
 
 <body>
@@ -170,27 +183,23 @@
             <div class="left">Vidhi's Portfolio</div>
             <div class="right">
                 <ul>
-                    <li><a href="https://www.linkedin.com/in/vidhi-gandhi-a23990280" target="_blank">LinkedIn
-                            Profile</a></li>
-                    <li><a href="https://github.com/Viidhii19" target="_blank">Github Profile</a></li>
-
-
+                    <li><a href="https://www.linkedin.com/in/vidhi-gandhi-a23990280" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com/Viidhii19" target="_blank">GitHub</a></li>
                 </ul>
             </div>
         </nav>
     </header>
+
     <main>
         <section class="firstSection">
             <div class="leftSection">
                 Hi, I’m Vidhi!
                 <div>A motivated and curious learner starting my journey in tech field.</div>
-
                 <span id="element"></span>
             </div>
-
             <div class="rightSection">
                 <img src="https://www.business.com/_next/image/?url=https%3A%2F%2Fimages.business.com%2Fapp%2Fuploads%2F2019%2F05%2F05125524%2F20-top-paying-tech-jobs-in-America-right-now.png&w=3840&q=75"
-                    alt="">
+                    alt="tech image">
             </div>
         </section>
 
@@ -198,25 +207,76 @@
             <span class="text-gray">What have I done so far</span>
             <h1>Work Experience</h1>
             <ol>
-                <li>YBi Foundation(August 2023 - September 2023):</li>
-                <p>Worked on Data Analytics, Machine Learning and
-                    statistical modelling to drive insights from complex datasets.</p>
-                <li>Java Development Intern(December2024-January 2025):</li>
-                <p>Worked on Java Fundamentals and gained hands on experience on language.</p>
-
+                <li>YBi Foundation (Aug 2023 - Sep 2023):</li>
+                <p>Worked on Data Analytics, Machine Learning, and statistical modelling to derive insights from complex
+                    datasets.</p>
+                <li>Java Development Intern (Dec 2024 - Jan 2025):</li>
+                <p>Worked on Java fundamentals and gained hands-on experience with the language.</p>
             </ol>
         </section>
 
-        <section class="thirdSection">
+        <section class="projectsSection">
+            <h1>Projects</h1>
 
+            <div class="projectBar">
+                <div class="projectInfo">
+                    <div class="projectTitle">Portfolio Website</div>
+                    <div class="projectRole">Role: Solo Project</div>
+                    <div class="projectDesc">
+                        A personal portfolio built with HTML, CSS, and JavaScript to showcase my work, skills, and
+                        activities.
+                    </div>
+                </div>
+                <a class="projectLinkBtn" href="https://github.com/Viidhii19/portfolio" target="_blank">GitHub</a>
+            </div>
+
+            <div class="projectBar">
+                <div class="projectInfo">
+                    <div class="projectTitle">CHATZ-A Chat Application</div>
+                    <div class="projectRole">Role: Contributor</div>
+                    <div class="projectDesc">
+                        Contributed in building a chat application in android studio using java and firebase. </div>
+                </div>
+                <a class="projectLinkBtn" href="https://github.com/JalChauhan/Demo" target="_blank">GitHub</a>
+            </div>
+
+            <!-- <div class="projectBar">
+                <div class="projectInfo">
+                    <div class="projectTitle">--</div>
+                    <div class="projectRole">Role: Solo Project</div>
+                    <div class="projectDesc">
+                        Built a web app using JavaScript and OpenWeatherMap API to show live weather data by city.
+                    </div>
+                </div>
+                <a class="projectLinkBtn" href="#"
+                    onclick="alert('Code available on request'); return false;">GitHub</a>
+            </div>
+        -->
+            <div class="projectBar">
+                <div class="projectInfo">
+                    <div class="projectTitle">Seatbelt-based-Heart-Monitoring-System
+                    </div>
+                    <div class="projectRole">Role: Contributor</div>
+                    <div class="projectDesc">
+                        Contributed to the development of an IoT-based health monitoring system integrated into a car
+                        seatbelt. The system uses sensors to monitor heart rate in real-time and alerts emergency
+                        contacts in case of abnormal vitals or accidents.
+                    </div>
+                </div>
+                <a class="projectLinkBtn" href="https://github.com/JalChauhan/Seatbelt-based-Heart-Monitoring-System_Jal-Chauhan_23"
+                    target="_blank">GitHub</a>
+            </div>
+        </section>
+
+
+        <section class="thirdSection">
             <h1>Certifications</h1>
             <ol>
                 <li>Code Unnati Advanced Course 3.0</li>
-                <li>Foundations of Cybersecurity course offered by Google</li>
-                <li>Python Fundamentals by Infosys SpringBoard</li>
-                <li>Java Certification Training Course by Simplilearn</li>
-                <li>DSA in Java and Multithreading in Java by Infosys SpringBoard</li>
-
+                <li>Foundations of Cybersecurity - Google</li>
+                <li>Python Fundamentals - Infosys SpringBoard</li>
+                <li>Java Certification Training - Simplilearn</li>
+                <li>DSA & Multithreading in Java - Infosys SpringBoard</li>
             </ol>
         </section>
 
@@ -224,35 +284,25 @@
             <span class="text-gray">Events, Hackathons & More</span>
             <h1>Achievements & Activities</h1>
             <ol>
-                <li>Participated in <strong>AIU Anveshan 2024 – West Zone Student Research Convention</strong> organized
-                    by the Association of Indian Universities at D.Y. Patil Deemed to be University, Navi Mumbai.</li>
-                <li>Participated in <strong>New India Vibrant Hackathon 2023</strong> organized by the Education
-                    Department, Government of Gujarat.</li>
-                <li>Participated in <strong>ODOO X MSU Hackathon – Footprints 2025</strong> hosted by The Maharaja
-                    Sayajirao University of Baroda.</li>
-                <li>Participated in <strong>Code Unnati Marathon 2025</strong> promoting innovation and tech-driven
-                    problem-solving.</li>
-                <li>Participated in <strong>Sports Week 2023</strong> and <strong>Sports Carnival 2025</strong> at KPGU.
-                </li>
-                <li>Attended <strong>AWS Community Day – AI/ML Edition 2023</strong>, gaining insights into the latest
-                    in AI/ML technologies.</li>
+                <li>AIU Anveshan 2024 – West Zone, DY Patil University</li>
+                <li>New India Vibrant Hackathon 2023 – Government of Gujarat</li>
+                <li>ODOO X MSU Hackathon 2025 – MSU Baroda</li>
+                <li>Code Unnati Marathon 2025</li>
+                <li>Sports Week 2023 & Carnival 2025 – KPGU</li>
+                <li>AWS Community Day – AI/ML Edition 2023</li>
             </ol>
         </section>
 
-
         <section class="contactme">
-
             <h1>Contact Me</h1>
             <ul>
-                <li>Email Id : vidhigandhi2004@gmail.com</li>
-                <li>Mobile Number : +91 9426084421 </li>
-
+                <li>Email: vidhigandhi2004@gmail.com</li>
+                <li>Phone: +91 9426084421</li>
             </ul>
         </section>
     </main>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
     <script>
         var typed = new Typed('#element', {
             strings: ['I’m passionate about building practical skills and exploring real-world projects that help me grow professionally.'],
@@ -260,7 +310,7 @@
         });
     </script>
 
-    <footer style="text-align: center; padding: 20px; background: rgb(18,18,62); color: gray;">
+    <footer>
         © 2025 Vidhi Gandhi | All rights reserved
     </footer>
 </body>
