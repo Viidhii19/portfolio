@@ -12,173 +12,229 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
     rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      background-color: rgb(0, 0, 33);
-      color: white;
-      font-family: "Poppins", sans-serif;
-      line-height: 1.6;
-    }
+body {
+  background-color: rgb(0, 0, 33);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+}
 
-    .container {
-      max-width: 950px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 80px;
-      background-color: rgb(18, 18, 62);
-      padding: 0 190px;
-    }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: rgb(18, 18, 62);
+  padding: 0 190px;
+  flex-wrap: wrap;
+}
 
-    nav .left {
-      font-size: 2rem;
-      font-weight: bold;
-    }
+nav .left {
+  font-size: 2rem;
+  font-weight: bold;
+}
 
-    nav .right ul {
-      display: flex;
-      list-style: none;
-    }
+nav .right ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
 
-    nav .right ul li {
-      margin: 0 15px;
-    }
+nav .right ul li {
+  margin: 0 15px;
+}
 
-    nav .right ul li a {
-      text-decoration: none;
-      color: white;
-      transition: 0.3s ease;
-    }
+nav .right ul li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease;
+}
 
-    nav .right ul li a:hover {
-      color: rgb(156, 156, 231);
-      font-size: 1.01rem;
-    }
+nav .right ul li a:hover {
+  color: rgb(156, 156, 231);
+  font-size: 1.01rem;
+}
 
-    .firstSection {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      margin: 60px auto;
-    }
+.firstSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 60px auto;
+}
 
-    .firstSection > div {
-      flex: 1;
-      min-width: 300px;
-      padding: 20px;
-    }
+.firstSection > div {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
 
-    .leftSection {
-      font-size: 140%;
-    }
+.leftSection {
+  font-size: 140%;
+}
 
-    .rightSection img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-    }
+.rightSection img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
 
-    .text-gray {
-      color: gray;
-    }
+.text-gray {
+  color: gray;
+}
 
-    section {
-      margin-bottom: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
+section {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-    section h1 {
-      font-size: 1.9rem;
-      margin-bottom: 20px;
-    }
+section h1 {
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+}
 
-    section ol {
-      padding-left: 20px;
-    }
+section ol {
+  padding-left: 20px;
+}
 
-    section ol li {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
+section ol li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
 
-    .projectBar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: rgb(28, 28, 78);
-      border-radius: 8px;
-      padding: 20px 30px;
-      margin: 15px 0;
-      transition: background 0.3s ease, transform 0.3s ease;
-      cursor: default;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    }
+.projectBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(28, 28, 78);
+  border-radius: 8px;
+  padding: 20px 30px;
+  margin: 15px 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: default;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  flex-wrap: wrap;
+}
 
-    .projectBar:hover {
-      background-color: rgb(36, 36, 90);
-      transform: scale(1.01);
-    }
+.projectBar:hover {
+  background-color: rgb(36, 36, 90);
+  transform: scale(1.01);
+}
 
-    .projectInfo {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
 
-    .projectTitle {
-      font-size: 1.3rem;
-      color: #ffffff;
-      font-weight: 600;
-    }
+.projectTitle {
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-weight: 600;
+}
 
-    .projectRole {
-      font-size: 0.9rem;
-      color: #bbbbbb;
-    }
+.projectRole {
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
 
-    .projectDesc {
-      font-size: 1rem;
-      color: #dddddd;
-      max-width: 600px;
-    }
+.projectDesc {
+  font-size: 1rem;
+  color: #dddddd;
+  max-width: 600px;
+}
 
-    .projectLinkBtn {
-      background-color: #4e4eff;
-      color: white;
-      padding: 8px 14px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      transition: background 0.3s ease;
-    }
+.projectLinkBtn {
+  background-color: #4e4eff;
+  color: white;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
 
-    .projectLinkBtn:hover {
-      background-color: #3a3acf;
-    }
+.projectLinkBtn:hover {
+  background-color: #3a3acf;
+}
 
-    .contactme ul {
-      list-style: none;
-      padding-left: 0;
-    }
+.contactme ul {
+  list-style: none;
+  padding-left: 0;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgb(18, 18, 62);
-      color: gray;
-    }
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgb(18, 18, 62);
+  color: gray;
+}
+
+/* ====== MEDIA QUERIES ====== */
+@media (max-width: 1024px) {
+  nav {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  nav .right ul {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  nav .right ul li {
+    margin: 10px 0;
+  }
+
+  .firstSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rightSection img {
+    margin-top: 30px;
+    max-width: 90%;
+  }
+
+  .projectBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .projectLinkBtn {
+    align-self: flex-start;
+  }
+
+  section h1 {
+    font-size: 1.6rem;
+  }
+}
+
   </style>
 </head>
 
