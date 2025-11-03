@@ -1,407 +1,437 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vidhi Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-    rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vidhi Gandhi — Portfolio</title>
+  <meta name="description" content="Vidhi Gandhi — AI/ML and Cybersecurity Enthusiast" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {} } };
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+
   <style>
-   * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    :root {
+      --bg-1: #030309;
+      --bg-2: #0b0b11;
+      --accent1: #7c3aed;
+      --accent2: #06b6d4;
+      --muted: #98a0b3;
+    }
 
-body {
-  background-color: rgb(0, 0, 33);
-  color: white;
-  font-family: "Poppins", sans-serif;
-  line-height: 1.6;
-}
+    html,
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      scroll-behavior: smooth;
+    }
 
-.container {
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+    body {
+      background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+      color: #e6eef8;
+      -webkit-font-smoothing: antialiased;
+    }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  background-color: rgb(18, 18, 62);
-  padding: 0 190px;
-  flex-wrap: wrap;
-}
+    .neon {
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-nav .left {
-  font-size: 2rem;
-  font-weight: bold;
-}
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: 0 6px 18px rgba(12, 12, 20, 0.6);
+      border-radius: 14px;
+      transition: all 0.3s ease;
+    }
 
-nav .right ul {
-  display: flex;
-  list-style: none;
-  flex-wrap: wrap;
-  padding-left: 0;
-}
+    .card:hover {
+      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.12);
+      transform: translateY(-4px);
+    }
 
-nav .right ul li {
-  margin: 0 15px;
-}
+    .accent-bar {
+      height: 4px;
+      border-radius: 6px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    }
 
-nav .right ul li a {
-  text-decoration: none;
-  color: white;
-  transition: 0.3s ease;
-}
+    .typed-cursor {
+      display: none !important;
+    }
 
-nav .right ul li a:hover {
-  color: rgb(156, 156, 231);
-  font-size: 1.01rem;
-}
+    @media (max-width: 768px) {
+      nav .nav-right {
+        display: none;
+      }
 
-.firstSection {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 60px auto;
-}
+      #mobileNavBtn {
+        display: inline-flex;
+      }
+    }
 
-.firstSection > div {
-  flex: 1;
-  min-width: 300px;
-  padding: 20px;
-}
-
-.leftSection {
-  font-size: 140%;
-}
-
-.rightSection img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-}
-
-.text-gray {
-  color: gray;
-}
-
-section {
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-section h1 {
-  font-size: 1.9rem;
-  margin-bottom: 20px;
-}
-
-section ol {
-  padding-left: 20px;
-}
-
-section ol li {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-.projectBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(28, 28, 78);
-  border-radius: 8px;
-  padding: 20px 30px;
-  margin: 15px 0;
-  transition: background 0.3s ease, transform 0.3s ease;
-  cursor: default;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  flex-wrap: wrap;
-}
-
-.projectBar:hover {
-  background-color: rgb(36, 36, 90);
-  transform: scale(1.01);
-}
-
-.projectInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
-}
-
-.projectTitle {
-  font-size: 1.3rem;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.projectRole {
-  font-size: 0.9rem;
-  color: #bbbbbb;
-}
-
-.projectDesc {
-  font-size: 1rem;
-  color: #dddddd;
-  max-width: 600px;
-}
-
-.projectLinkBtn {
-  background-color: #4e4eff;
-  color: white;
-  padding: 8px 14px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
-  margin-top: 10px;
-}
-
-.projectLinkBtn:hover {
-  background-color: #3a3acf;
-}
-
-.contactme ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: rgb(18, 18, 62);
-  color: gray;
-}
-
-/* ====== MEDIA QUERIES ====== */
-@media (max-width: 1024px) {
-  nav {
-    padding: 0 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-    text-align: center;
-  }
-
-  nav .right ul {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  nav .right ul li {
-    margin: 10px 0;
-  }
-
-  .firstSection {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .rightSection img {
-    margin-top: 30px;
-    max-width: 90%;
-  }
-
-  .projectBar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .projectLinkBtn {
-    align-self: flex-start;
-  }
-
-  section h1 {
-    font-size: 1.6rem;
-  }
-}
-
+    @media (min-width: 769px) {
+      #mobileMenu {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <div class="left">Vidhi's Portfolio</div>
-      <div class="right">
-        <ul>
-          <li>
-            <a href="https://drive.google.com/file/d/1LSo93Kvu9c5y9m_LGYCx4HuoDqojwfdK/view?usp=sharing" target="_blank">Resume</a>
-          </li>
-            <li>
-            <a href="https://www.linkedin.com/in/vidhi-g-a23990280/" target="_blank">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://github.com/Viidhii19" target="_blank">GitHub</a>
-          </li>
-          
-        </ul>
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-sm bg-[rgba(3,3,9,0.75)]">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-full neon flex items-center justify-center font-bold text-xl">V</div>
+        <div class="hidden sm:block">
+          <div class="text-sm font-semibold">Vidhi Gandhi</div>
+          <div class="text-xs text-[--muted]">AI/ML & Cybersecurity</div>
+        </div>
+      </a>
+
+      <nav class="nav-right hidden md:flex items-center gap-6 text-sm">
+        <a href="#home" class="hover:text-white">Home</a>
+        <a href="#about" class="hover:text-white">About</a>
+        <a href="#skills" class="hover:text-white">Skills</a>
+        <a href="#projects" class="hover:text-white">Projects</a>
+        <a href="#experience" class="hover:text-white">Experience</a>
+        <a href="#certs" class="hover:text-white">Certifications</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+      </nav>
+
+      <button id="mobileNavBtn"
+        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-zinc-800">
+        <svg width="20" height="20" fill="none" class="text-white" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+            d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="md:hidden px-6 pb-4 hidden">
+      <div class="flex flex-col gap-3">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main>
-    <div class="container">
-      <section class="firstSection">
-        <div class="leftSection">
-          Hi, I’m Vidhi!
-          <div>
-            A motivated and curious learner starting my journey in tech field.
+  <main id="home" class="pt-40 pb-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <!-- HERO -->
+      <section class="relative overflow-hidden min-h-screen flex items-center">
+        <!-- Gradient blob background -->
+        <div class="absolute inset-0 -z-10">
+          <div
+            class="absolute top-1/4 right-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-indigo-600 via-purple-600 to-sky-500 opacity-20 blur-3xl">
           </div>
-          <span id="element"></span>
         </div>
-        <div class="rightSection">
-          <img
-            src="https://www.business.com/_next/image/?url=https%3A%2F%2Fimages.business.com%2Fapp%2Fuploads%2F2019%2F05%2F05125524%2F20-top-paying-tech-jobs-in-America-right-now.png&w=3840&q=75"
-            alt="tech image" />
-        </div>
-      </section>
 
-      <section class="secondSection">
-        <span class="text-gray">What have I done so far</span>
-        <h1>Work Experience</h1>
-        <ol>
-          <li>YBi Foundation (Aug 2023 - Sep 2023):</li>
-          <p>
-            Worked on Data Analytics, Machine Learning, and statistical
-            modelling to derive insights from complex datasets.
+        <!-- hero content -->
+        <div class="max-w-3xl mx-auto text-left px-6">
+          <p class="text-slate-400">Hello — I’m</p>
+          <h1 class="text-6xl font-extrabold text-white mb-4">
+            Vidhi <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-sky-400">Gandhi</span>
+          </h1>
+          <p class="text-slate-300 leading-relaxed mb-8">
+            A motivated and curious learner starting my journey in the tech field. Passionate about building practical
+            skills and exploring real-world projects that help me grow professionally.
           </p>
-          <li>Java Development Intern (Dec 2024 - Jan 2025):</li>
-          <p>
-            Worked on Java fundamentals and gained hands-on experience with
-            the language.
-          </p>
-        </ol>
-      </section>
-
-      <section class="projectsSection">
-        <h1>Projects</h1>
-
-        <div class="projectBar">
-          <div class="projectInfo">
-            <div class="projectTitle">Portfolio Website</div>
-            <div class="projectRole">Role: Solo Project</div>
-            <div class="projectDesc">
-              A personal portfolio built with HTML, CSS, and JavaScript to
-              showcase my work, skills, and activities.
-            </div>
+          <div class="flex gap-4">
+            <a href="https://drive.google.com/file/d/1LSo93Kvu9c5y9m_LGYCx4HuoDqojwfdK/view?usp=drive_link"
+              class="px-5 py-3 border border-zinc-700 rounded-md hover:bg-[rgba(124,58,237,0.1)]">Resume</a>
+            <a href="#contact"
+              class="px-5 py-3 border border-zinc-700 rounded-md hover:bg-[rgba(124,58,237,0.1)]">Contact</a>
           </div>
-          <a class="projectLinkBtn" href="https://github.com/Viidhii19/portfolio" target="_blank">GitHub</a>
-        </div>
-
-        <div class="projectBar">
-          <div class="projectInfo">
-            <div class="projectTitle">Fact Video Generator - AI Agent</div>
-            <div class="projectRole">Role: Individual</div>
-            <div class="projectDesc">
-              Developed an Agent which generates video of facts on a topic without duplicacy using Google Generative AI, Gemini API, ffmpeg, gTTs and Python.
-            </div>
-          </div>
-          <a class="projectLinkBtn" href="https://github.com/Viidhii19/Fact_video_generator" target="_blank">GitHub</a>
-        </div>
-
-        <div class="projectBar">
-          <div class="projectInfo">
-            <div class="projectTitle">CHATZ-A Chat Application</div>
-            <div class="projectRole">Role: Contributor</div>
-            <div class="projectDesc">
-              Contributed in building a chat application in android studio
-              using java and firebase.
-            </div>
-          </div>
-          <a class="projectLinkBtn" href="https://github.com/JalChauhan/Demo" target="_blank">GitHub</a>
-        </div>
-
-        <div class="projectBar">
-          <div class="projectInfo">
-            <div class="projectTitle">Seatbelt-based Heart Monitoring System</div>
-            <div class="projectRole">Role: Contributor</div>
-            <div class="projectDesc">
-              Contributed to the development of an IoT-based health monitoring
-              system integrated into a car seatbelt. The system uses sensors
-              to monitor heart rate in real-time and alerts emergency contacts
-              in case of abnormal vitals or accidents.
-            </div>
-          </div>
-          <a class="projectLinkBtn"
-            href="https://github.com/JalChauhan/Seatbelt-based-Heart-Monitoring-System_Jal-Chauhan_23"
-            target="_blank">GitHub</a>
         </div>
       </section>
 
-      <section class="thirdSection">
-        <h1>Certifications</h1>
-        <ol>
-<li>Ethical Hacker - Cisco Networking Academy</li>          
-<li>Code Unnati Advanced Course 3.0</li>
-          <li>Python Bootcamp - Sanfoundry</li>
-          <li>Foundations of Cybersecurity - Google</li>
-          <li>Python Fundamentals - Infosys SpringBoard</li>
-          <li>Java Certification Training - Simplilearn</li>
-          <li>DSA & Multithreading in Java - Infosys SpringBoard</li>
-        </ol>
+
+      <!-- ABOUT -->
+      <section id="about" class="mb-12">
+        <div class="reveal" data-delay="200">
+          <h2 class="text-2xl font-semibold mb-3">About</h2>
+          <p class="text-slate-300">I’m a final-year Computer Science Engineering student with a growing interest in
+            Artificial Intelligence, Machine Learning,Cybersecurity, and other emerging technologies.
+            While I’m still exploring and learning, I’m highly motivated to get real-world, practical experience through
+            internships, projects, and industry exposure.
+            <br>
+            🔍 Currently focused on:
+          <ul>- Learning and applying concepts in AI & ML.</ul>
+          <ul>- Exploring data-driven problem solving.</ul>
+          <ul>- Gaining knowledge in cybersecurity fundamentals.</ul>
+          <ul>- Working on small projects to build practical understanding.</ul>
+          <br>
+          I'm open to internships and collaboration opportunities. Always looking to learn and grow.</p>
+        </div>
       </section>
 
-      <section class="fourthSection">
-        <span class="text-gray">Events, Hackathons & More</span>
-        <h1>Achievements & Activities</h1>
-        <ol>
-          <li>AIU Anveshan 2024 – West Zone, DY Patil University</li>
-          <li>New India Vibrant Hackathon 2023 – Government of Gujarat</li>
-          <li>ODOO X MSU Hackathon 2025 – MSU Baroda</li>
-          <li>Code Unnati Marathon 2025</li>
-          <li>Sports Week 2023 & Carnival 2025 – KPGU</li>
-          <li>AWS Community Day – AI/ML Edition 2023</li>
-          
-        </ol>
+      <!-- skills-->
+      <section id="skills" class="mb-12">
+        <div class="reveal" data-delay="200">
+          <h2 class="text-2xl font-semibold mb-3">Skills</h2>
+          <div class="mt-6 grid md:grid-cols-3 gap-4">
+
+            <div class="card p-1 reveal" data-delay="280">
+              <h3 class="font-semibold">Technical Skills</h3>
+              <ul class="mt-2 text-sm text-slate-300 space-y-1 leading-relaxed">
+                <li>• <span class="text-cyan-400 font-medium">Programming Languages:</span> Python, HTML, CSS, Java,
+                  C/C++
+                </li>
+                <li>• <span class="text-cyan-400 font-medium">AI & LLM Technologies:</span> LangChain, Google Gemini
+                  API,
+                  HuggingFace, FAISS, RAG, Prompt Engineering, GenAI</li>
+
+              </ul>
+
+            </div>
+
+            <div class="card p-2 reveal" data-delay="400">
+              <h3 class="font-semibold">Tools & Platforms</h3>
+              <p class="mt-2 text-sm text-slate-300">GitHub • VS Code • Jupyter Notebook (Anaconda) • Canva • Firebase •
+                Android Studio • Streamlit • Arduino</p>
+            </div>
+          </div>
       </section>
 
-      <section class="contactme">
-        <h1>Contact Me</h1>
-        <ul>
-         <!-- <li>Email: vidhigandhi2004@gmail.com</li>
-         <li>Phone: +91 9426084421</li> -->
-        </ul>
+      <!-- PROJECTS -->
+      <section id="projects" class="mb-12">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl font-semibold reveal" data-delay="460">Projects</h2>
+        </div>
+
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <article class="card p-6 reveal" data-delay="520">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-lg font-semibold">Fact Video Generator — AI Agent</h3>
+                <p class="mt-2 text-sm text-slate-300">• Developed an AI-powered video generator using Gemini API for
+                  fact creation and gTTS for narration.
+                  <br><br>
+                  • Designed automated video clips with text overlays and dynamic backgrounds using MoviePy and
+                  FFmpeg.<br><br>
+                  • Used JSON-based history tracking to ensure content uniqueness across video sessions.
+                </p>
+                <div class="mt-3 text-xs text-zinc-400">Python, Google Generative AI, FFmpeg , MoviePy, gTTS</div>
+              </div>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a class="px-3 py-2 rounded-md border text-sm" href="https://github.com/Viidhii19/Fact_video_generator"
+                target="_blank">Repo</a>
+              <a class="px-3 py-2 rounded-md border text-sm"
+                href="https://drive.google.com/file/d/1HUqh7W1xH0wEY7x5zF5XiaKxN82b0y8v/view?pli=1"
+                target="_blank">Demo</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card p-6 reveal" data-delay="560">
+            <div>
+              <h3 class="text-lg font-semibold">Seatbelt-based Heart Monitoring System</h3>
+              <p class="mt-2 text-sm text-slate-300">• Engineered an IoT-enabled seatbelt that reads heart rate sensors
+                and tracks passenger vitals in real time.
+                <br><br>
+                • Designed an emergency alert system to notify contacts during irregular health readings or crashes.
+                <br><br>
+                • Focused on data accuracy and fault-tolerant design for continuous, reliable health monitoring.
+              </p>
+              <div class="mt-3 text-xs text-zinc-400">Arduino, IoT Sensors, C/C++</div>
+            </div>
+
+            <div class="mt-4 flex gap-3">
+              <a class="px-3 py-2 rounded-md border text-sm"
+                href="https://github.com/JalChauhan/Seatbelt-based-Heart-Monitoring-System_Jal-Chauhan_23"
+                target="_blank">Repo</a>
+              <a class="px-3 py-2 rounded-md border text-sm"
+                href="https://drive.google.com/file/d/1-UWxLSggBsvefDUxqmtRvdPj_fGyDl87/view" target="_blank">Demo</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card p-6 reveal" data-delay="600">
+            <div>
+              <h3 class="text-lg font-semibold">CHATZ – Real-time Chat Application</h3>
+              <p class="mt-2 text-sm text-slate-300">• Contributed to building a real-time chat application in Android
+                Studio using Java and Firebase Realtime Database.<br><br>
+                • Implemented secure user sign-up and login features using Firebase Authentication.<br><br>
+                • Enhanced chat functionality with real-time messaging and responsive UI components for smooth user
+                interaction.</p>
+              <div class="mt-3 text-xs text-zinc-400">Java, Firebase, Android Studio</div>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a class="px-3 py-2 rounded-md border text-sm" href="https://github.com/JalChauhan/Demo"
+                target="_blank">Repo</a>
+              <a class="px-3 py-2 rounded-md border text-sm"
+                href="https://www.linkedin.com/posts/activity-7293570058822295554-zAP0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER9CrsBrSqSsUq6FdpjvW0toa7LykFYyLI"
+                target="_blank">Demo</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card p-6 reveal" data-delay="600">
+            <div>
+              <h3 class="text-lg font-semibold">Customer Care Q&A Chatbot</h3>
+              <p class="mt-2 text-sm text-slate-300">• Developed an intelligent FAQ chatbot using LangChain + Google
+                Gemini 2.5 Flash for contextual responses.<br><br>
+                • Used HuggingFace embeddings + FAISS for fast document retrieval and similarity search.
+                <br><br>
+                • Built an interactive Streamlit interface allowing users to query, get answers, and update data
+                dynamically.
+              </p>
+              <div class="mt-3 text-xs text-zinc-400">LangChain, Google Gemini, HuggingFace, Streamlit, FAISS</div>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a class="px-3 py-2 rounded-md border text-sm" href="https://github.com/Viidhii19/CustomerCare-Q-A"
+                target="_blank">Repo</a>
+              <a class="px-3 py-2 rounded-md border text-sm"
+                href="https://drive.google.com/file/d/1talDW9UhPlmtVaEBEzLmFyTeA33nXQhw/view" target="_blank">Demo</a>
+            </div>
+          </article>
+
+          <!--Card 5-->
+          <article class="card p-6 reveal" data-delay="600">
+            <div>
+              <h3 class="text-lg font-semibold">Portfolio Website</h3>
+              <p class="mt-2 text-sm text-slate-300">• Designed and developed a portfolio using HTML, Tailwind
+                CSS, and animations for smooth visuals.
+                <br><br>
+                • Showcases projects, skills, and certifications in a responsive dark theme with scroll-based effects.
+                <br><br>
+                • Focused on minimal design, fast loading, and clear presentation of work.
+              </p>
+              <div class="mt-3 text-xs text-zinc-400">HTML, Tailwind CSS, JavaScript</div>
+            </div>
+            <div class="mt-4 flex gap-3">
+              <a class="px-3 py-2 rounded-md border text-sm" href="https://github.com/Viidhii19/portfolio"
+                target="_blank">Repo</a>
+              <a class="px-3 py-2 rounded-md border text-sm" href="https://viidhii19.github.io/portfolio/"
+                target="_blank">Demo</a>
+            </div>
+          </article>
+
+        </div>
       </section>
+
+      <!-- Expericnce-->
+
+      <section id="experience" class="mb-12 reveal" data-delay="600">
+        <h2 class="text-2xl font-semibold mb-3">Experience</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="card p-6">
+            <h3 class="font-semibold text-lg">YBI Foundation – Data Analytics Intern</h3>
+            <p class="mt-2 text-sm text-slate-300">
+              • Applied data analytics, statistical modeling, and machine learning techniques to extract actionable
+              insights from complex datasets.<br><br>
+              • Worked on end-to-end data pipelines, including data preprocessing, analysis, and model development using
+              Python and SQL.<br><br>
+              • Strengthened foundational knowledge in data science, algorithms, and data structures.
+            </p>
+            <p class="mt-2 text-xs text-zinc-400">Aug 2023 – Sep 2023</p>
+          </div>
+
+          <div class="card p-6">
+            <h3 class="font-semibold text-lg">Cognifyz Technologies – Java Development Intern</h3>
+            <p class="mt-2 text-sm text-slate-300">
+              • Gained hands-on experience in Java application development, focusing on core concepts such as OOPs,
+              multithreading, and exception handling.<br><br>
+              • Built and debugged Java-based modules, reinforcing practical understanding of backend
+              development.<br><br>
+              • Strengthened problem-solving skills through algorithmic challenges and real-time code implementation.
+            </p>
+            <p class="mt-2 text-xs text-zinc-400">Dec 2024 – Jan 2025</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section id="certs" class="mb-12 reveal" data-delay="640">
+        <h2 class="text-2xl font-semibold mb-3">Certifications</h2>
+        <div class="card p-6">
+          <ol class="list-decimal pl-5 text-slate-300 space-y-2">
+            <li>Code Unnati Advanced Course 3.0 — Code Unnati </li>
+            <li>Ethical Hacker — Cisco Networking Academy</li>
+            <li>Python Bootcamp — Sanfoundry</li>
+            <li>Foundations of Cybersecurity — Google</li>
+            <li>Python Fundamentals — Infosys SpringBoard</li>
+            <li>Java Certification Training — Simplilearn</li>
+            <li>DSA & Multithreading in Java — Infosys SpringBoard</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS -->
+      <section id="achievements" class="mb-12 reveal" data-delay="700">
+        <h2 class="text-2xl font-semibold mb-3">Achievements & Activities</h2>
+        <div class="card p-6">
+          <ol class="list-decimal pl-5 text-slate-300 space-y-2">
+            <li>AIU Anveshan 2024 – West Zone, DY Patil University</li>
+            <li>New India Vibrant Hackathon 2023 – Government of Gujarat</li>
+            <li>ODOO X MSU Hackathon 2025 – MSU Baroda</li>
+            <li>Code Unnati Marathon 2025</li>
+            <li>Sports Week 2023 & Carnival 2025 – KPGU</li>
+            <li>AWS Community Day – AI/ML Edition 2023</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="mb-12 reveal" data-delay="760">
+        <h2 class="text-2xl font-semibold mb-3">Contact</h2>
+        <div class="card p-6">
+          <p class="text-sm text-slate-300">Email: <a class="font-medium text-white"
+              href="mailto:vidhigandhi2004@gmail.com">vidhigandhi2004@gmail.com</a></p>
+          <p class="mt-2 text-sm text-slate-300">Phone: <span class="font-medium">+91 9426084421</span></p>
+          <div class="mt-4 flex gap-3">
+            <a class="px-3 py-2 rounded-md border text-sm" href="https://github.com/Viidhii19"
+              target="_blank">GitHub</a>
+            <a class="px-3 py-2 rounded-md border text-sm" href="https://www.linkedin.com/in/vidhi-g-a23990280/"
+              target="_blank">LinkedIn</a>
+
+            <a class="px-3 py-2 rounded-md border text-sm"
+              href="https://drive.google.com/file/d/1LSo93Kvu9c5y9m_LGYCx4HuoDqojwfdK/view?usp=drive_link"
+              target="_blank">Resume</a>
+          </div>
+        </div>
+
+    </div>
+    </section>
+
+    <footer class="text-sm text-zinc-500 pt-10 pb-20 text-center">© 2025 Vidhi Gandhi
+    </footer>
     </div>
   </main>
 
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- Typed.js (still runs, but cursor hidden) -->
+  <script src="https://unpkg.com/typed.js@2.1.2/dist/typed.umd.js"></script>
   <script>
-    var typed = new Typed('#element', {
-      strings: ['I’m passionate about building practical skills and exploring real-world projects that help me grow professionally.'],
-      typeSpeed: 50,
+    const mobileBtn = document.getElementById('mobileNavBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    new Typed('#typed', {
+      strings: ["Building practical systems and exploring real-world projects that shape my learning."],
+      typeSpeed: 35,
+      backSpeed: 0,
+      showCursor: false
     });
   </script>
-
-  <footer>
-    © 2025 Vidhi Gandhi | All rights reserved
-  </footer>
 </body>
 
 </html>
-
-
-
-
-
-
