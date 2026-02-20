@@ -1,483 +1,137 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vidhi Gandhi — Portfolio</title>
-  <meta name="description" content="Vidhi Gandhi — AI/ML and Cybersecurity Enthusiast" />
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = { theme: { extend: {} } };
-  </script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
-
-  <style>
-    :root {
-      --bg-1: #030309;
-      --bg-2: #0b0b11;
-      --accent1: #7c3aed;
-      --accent2: #06b6d4;
-      --muted: #98a0b3;
-    }
-
-    html,
-    body {
-      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
-      color: #e6eef8;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .neon {
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      box-shadow: 0 6px 18px rgba(12, 12, 20, 0.6);
-      border-radius: 14px;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.12);
-      transform: translateY(-4px);
-    }
-
-    .accent-bar {
-      height: 4px;
-      border-radius: 6px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-    }
-
-    .typed-cursor {
-      display: none !important;
-    }
-
-    @media (max-width: 768px) {
-      nav .nav-right {
-        display: none;
-      }
-
-      #mobileNavBtn {
-        display: inline-flex;
-      }
-    }
-
-    @media (min-width: 769px) {
-      #mobileMenu {
-        display: none !important;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhi Gandhi | AI/ML Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Minimal custom CSS for scrollbars and subtle effects */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111827; }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4B5563; }
+    </style>
 </head>
+<body class="bg-gray-900 text-gray-300 font-sans antialiased leading-relaxed">
 
-<body>
-  <!-- NAV -->
-  <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-sm bg-[rgba(3,3,9,0.75)]">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-full neon flex items-center justify-center font-bold text-xl">V</div>
-        <div class="hidden sm:block">
-          <div class="text-sm font-semibold">Vidhi Gandhi</div>
-          <div class="text-xs text-[--muted]">AI/ML & Cybersecurity</div>
+    <nav class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-white font-bold text-xl tracking-tight">VG.</a>
+            <div class="space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#skills" class="hover:text-white transition">Skills</a>
+                <a href="#projects" class="hover:text-white transition">Projects</a>
+                <a href="#experience" class="hover:text-white transition">Experience</a>
+            </div>
         </div>
-      </a>
+    </nav>
 
-      <nav class="nav-right hidden md:flex items-center gap-6 text-sm">
-        <a href="#home" class="hover:text-white">Home</a>
-        <a href="#about" class="hover:text-white">About</a>
-        <a href="#skills" class="hover:text-white">Skills</a>
-        <a href="#projects" class="hover:text-white">Projects</a>
-        <a href="#experience" class="hover:text-white">Experience</a>
-        <a href="#certs" class="hover:text-white">Certifications</a>
-        <a href="#contact" class="hover:text-white">Contact</a>
-      </nav>
-
-      <button id="mobileNavBtn"
-        class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-zinc-800">
-        <svg width="20" height="20" fill="none" class="text-white" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
-            d="M4 7h16M4 12h16M4 17h16" />
-        </svg>
-      </button>
-    </div>
-
-    <div id="mobileMenu" class="md:hidden px-6 pb-4 hidden">
-      <div class="flex flex-col gap-3">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#certs">Certifications</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </header>
-
-  <main id="home" class="pt-20 pb-24">
-    <div class="max-w-6xl mx-auto px-6">
-      <!-- HERO -->
-      <section class="relative overflow-hidden min-h-screen flex items-center">
-        <!-- Gradient blob background -->
-        <div class="absolute inset-0 -z-10">
-          <div
-            class="absolute top-1/4 right-[-10%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-indigo-600 via-purple-600 to-sky-500 opacity-20 blur-3xl">
-          </div>
+    <header id="home" class="max-w-5xl mx-auto px-6 py-24 md:py-32">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
+            Hi, I'm <span class="text-blue-400">Vidhi Gandhi</span>.
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 max-w-2xl mb-8">
+            A final-year Computer Science Engineering student engineering intelligent systems. Focused on AI/ML pipelines, LLM-powered applications, and real-world problem solving.
+        </p>
+        <div class="flex space-x-4">
+            <a href="#projects" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-md font-semibold transition">View My Work</a>
+            <a href="mailto:vidhigandhi2004@gmail.com" class="border border-gray-700 hover:border-gray-500 text-gray-300 px-6 py-3 rounded-md font-semibold transition">Contact Me</a>
         </div>
+    </header>
 
-        <!-- hero content -->
-        <div class="max-w-3xl mx-auto text-left px-6">
-          <p class="text-slate-400">Hello — I’m</p>
-          <h1 class="text-6xl font-extrabold text-white mb-4">
-            Vidhi <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-sky-400">Gandhi</span>
-          </h1>
-          <p class="text-slate-300 leading-relaxed mb-8">
-            A motivated and curious learner starting my journey in the tech field. Passionate about building practical
-            skills and exploring real-world projects that help me grow professionally.
-          </p>
-          <div class="flex gap-4">
-            <a href="https://drive.google.com/file/d/1LSo93Kvu9c5y9m_LGYCx4HuoDqojwfdK/view?usp=drive_link"
-              class="px-5 py-3 border border-zinc-700 rounded-md hover:bg-[rgba(124,58,237,0.1)]">Resume</a>
-            <a href="#contact"
-              class="px-5 py-3 border border-zinc-700 rounded-md hover:bg-[rgba(124,58,237,0.1)]">Contact</a>
-          </div>
+    <section id="skills" class="border-t border-gray-800 bg-gray-800/20">
+        <div class="max-w-5xl mx-auto px-6 py-20">
+            <h2 class="text-2xl font-bold text-white mb-8">Technical Arsenal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div>
+                    <h3 class="text-sm uppercase tracking-wider text-gray-500 font-semibold mb-4">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-blue-300 px-3 py-1 rounded-full text-sm border border-gray-700">Python</span>
+                        <span class="bg-gray-800 text-blue-300 px-3 py-1 rounded-full text-sm border border-gray-700">Java</span>
+                        <span class="bg-gray-800 text-blue-300 px-3 py-1 rounded-full text-sm border border-gray-700">C/C++</span>
+                        <span class="bg-gray-800 text-blue-300 px-3 py-1 rounded-full text-sm border border-gray-700">HTML/CSS</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-sm uppercase tracking-wider text-gray-500 font-semibold mb-4">AI & LLM</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm border border-gray-700">LangChain</span>
+                        <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm border border-gray-700">Google Gemini API</span>
+                        <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm border border-gray-700">FAISS & RAG</span>
+                        <span class="bg-gray-800 text-green-300 px-3 py-1 rounded-full text-sm border border-gray-700">HuggingFace</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-sm uppercase tracking-wider text-gray-500 font-semibold mb-4">Tools & Platforms</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-800 text-purple-300 px-3 py-1 rounded-full text-sm border border-gray-700">Streamlit</span>
+                        <span class="bg-gray-800 text-purple-300 px-3 py-1 rounded-full text-sm border border-gray-700">Firebase</span>
+                        <span class="bg-gray-800 text-purple-300 px-3 py-1 rounded-full text-sm border border-gray-700">Git/GitHub</span>
+                        <span class="bg-gray-800 text-purple-300 px-3 py-1 rounded-full text-sm border border-gray-700">Jupyter</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </section>
-
-
-      <!-- ABOUT -->
-      <section id="about" class="mb-12">
-        <div class="reveal" data-delay="200">
-          <h2 class="text-2xl font-semibold mb-3">About</h2>
-          <p class="text-slate-300">I’m a final-year Computer Science Engineering student with a growing interest in
-            Artificial Intelligence, Machine Learning,Cybersecurity, and other emerging technologies.
-            While I’m still exploring and learning, I’m highly motivated to get real-world, practical experience through
-            internships, projects, and industry exposure.
-            <br>
-            🔍 Currently focused on:
-          <ul>- Learning and applying concepts in AI & ML.</ul>
-          <ul>- Exploring data-driven problem solving.</ul>
-          <ul>- Gaining knowledge in cybersecurity fundamentals.</ul>
-          <ul>- Working on small projects to build practical understanding.</ul>
-          <br>
-          I'm open to internships and collaboration opportunities. Always looking to learn and grow.</p>
-        </div>
-      </section>
-
-      <!-- skills-->
-      <section id="skills" class="mb-12">
-        <div class="reveal" data-delay="200">
-          <h2 class="text-2xl font-semibold mb-3">Skills</h2>
-          <div class="mt-6 grid md:grid-cols-3 gap-4">
-
-            <div class="card p-1 reveal" data-delay="280">
-              <h3 class="font-semibold">Technical Skills</h3>
-              <ul class="mt-2 text-sm text-slate-300 space-y-1 leading-relaxed">
-                <li>• <span class="text-cyan-400 font-medium">Programming Languages:</span> Python, HTML, CSS, Java,
-                  C/C++
-                </li>
-                <li>• <span class="text-cyan-400 font-medium">AI & LLM Technologies:</span> LangChain, Google Gemini
-                  API,
-                  HuggingFace, FAISS, RAG, Prompt Engineering, GenAI</li>
-
-              </ul>
-
-            </div>
-
-            <div class="card p-2 reveal" data-delay="400">
-              <h3 class="font-semibold">Tools & Platforms</h3>
-              <p class="mt-2 text-sm text-slate-300">GitHub • VS Code • Jupyter Notebook (Anaconda) • Canva • Firebase •
-                Android Studio • Streamlit • Arduino</p>
-            </div>
-          </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects" class="mb-12">
-        <div class="flex items-center justify-between">
-          <h2 class="text-2xl font-semibold reveal" data-delay="460">Projects</h2>
-        </div>
-
-        <div class="mt-6 grid md:grid-cols-3 gap-6">
-
-          <!-- Card 1 -->
-          <article class="card p-6 reveal" data-delay="520">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="text-lg font-semibold">Restaurant Review Analysis System </h3>
-                <p class="mt-2 text-sm text-slate-300">• Built a Retrieval-Augmented Generation (RAG) system to analyze
-                  and summarize customer restaurant reviews using semantic search and large language models.<br><br>
-                  • Implemented Ollama embeddings with ChromaDB to retrieve review-grounded context for accurate,
-                  evidence-based insights on food quality, service, pricing, and ambience.<br><br>
-                  • Developed an interactive Streamlit application with cuisine filtering, restaurant selection, and
-                  natural-language queries to deliver real-time, trustworthy review analytics.
-
-                </p>
-                <div class="mt-3 text-xs text-zinc-400">LangChain, Ollama (LLaMA 3.2), ChromaDB, Streamlit </div>
-              </div>
-            </div>
-            <div class="mt-4 flex gap-3">
-              <a class="px-3 py-2 rounded-md border text-sm"
-                href="https://github.com/Viidhii19/Restaurant-Review-Analysis-System" target="_blank">Repo</a>
-              <a class="px-3 py-2 rounded-md border text-sm"
-                href="https://drive.google.com/file/d/1ut47COhxKixWsZ5OpvvXKjOsvhZ8-0qh/view"
-                target="_blank">Demo</a>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="card p-6 reveal" data-delay="520">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="text-lg font-semibold">Customer Care Q&A Chatbot </h3>
-                <p class="mt-2 text-sm text-slate-300">• Developed an intelligent customer support chatbot leveraging
-                  LangChain and Google Gemini 2.5 Flash to generate accurate, context-based responses from a custom FAQ
-                  knowledge base.<br><br>
-                  • Implemented vector embeddings using HuggingFace Instructor models and FAISS for efficient document
-                  retrieval and similarity search.<br><br>
-                  • Built an interactive Streamlit interface allowing users to query, view instant answers, and
-                  dynamically update the knowledge base from CSV data.
-                </p>
-                <div class="mt-3 text-xs text-zinc-400">LangChain, Google Gemini, HuggingFace, Streamlit, FAISS </div>
-              </div>
-            </div>
-            <div class="mt-4 flex gap-3">
-              <a class="px-3 py-2 rounded-md border text-sm" href="https://github.com/Viidhii19/CustomerCare-Q-A"
-                target="_blank">Repo</a>
-              <a class="px-3 py-2 rounded-md border text-sm"
-                href="https://drive.google.com/file/d/1talDW9UhPlmtVaEBEzLmFyTeA33nXQhw/view" target="_blank">Demo</a>
-            </div>
-          </article>
-
-          
-          <!-- Card 3 -->
-          <article class="card p-6 reveal" data-delay="520">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="text-lg font-semibold">Fact Video Generator — AI Agent</h3>
-                <p class="mt-2 text-sm text-slate-300">• Developed an AI-powered video generator using Gemini API for
-                  fact creation and gTTS for narration.
-                  <br><br>
-                  • Designed automated video clips with text overlays and dynamic backgrounds using MoviePy and
-                  FFmpeg.<br><br>
-                  • Used JSON-based history tracking to ensure content uniqueness across video sessions.
-                </p>
-                <div class="mt-3 text-xs text-zinc-400">Python, Google Generative AI, FFmpeg , MoviePy, gTTS</div>
-              </div>
-            </div>
-            <div class="mt-4 flex gap-3">
-              <a class="px-3 py-2 rounded-md border text-sm" href="https://github.com/Viidhii19/Fact_video_generator"
-                target="_blank">Repo</a>
-              <a class="px-3 py-2 rounded-md border text-sm"
-                href="https://drive.google.com/file/d/1HUqh7W1xH0wEY7x5zF5XiaKxN82b0y8v/view?pli=1"
-                target="_blank">Demo</a>
-            </div>
-          </article>
-
-          <!-- Card 4 -->
-          <article class="card p-6 reveal" data-delay="560">
-            <div>
-              <h3 class="text-lg font-semibold">Seatbelt-based Heart Monitoring System</h3>
-              <p class="mt-2 text-sm text-slate-300">• Engineered an IoT-enabled seatbelt that reads heart rate sensors
-                and tracks passenger vitals in real time.
-                <br><br>
-                • Designed an emergency alert system to notify contacts during irregular health readings or crashes.
-                <br><br>
-                • Focused on data accuracy and fault-tolerant design for continuous, reliable health monitoring.
-              </p>
-              <div class="mt-3 text-xs text-zinc-400">Arduino, IoT Sensors, C/C++</div>
-            </div>
-
-            <div class="mt-4 flex gap-3">
-              <a class="px-3 py-2 rounded-md border text-sm"
-                href="https://github.com/JalChauhan/Seatbelt-based-Heart-Monitoring-System_Jal-Chauhan_23"
-                target="_blank">Repo</a>
-              <a class="px-3 py-2 rounded-md border text-sm"
-                href="https://drive.google.com/file/d/1-UWxLSggBsvefDUxqmtRvdPj_fGyDl87/view" target="_blank">Demo</a>
-            </div>
-          </article>
-
-          <!-- Card 5 -->
-          <article class="card p-6 reveal" data-delay="600">
-            <div>
-              <h3 class="text-lg font-semibold">CHATZ – Real-time Chat Application</h3>
-              <p class="mt-2 text-sm text-slate-300">• Contributed to building a real-time chat application in Android
-                Studio using Java and Firebase Realtime Database.<br><br>
-                • Implemented secure user sign-up and login features using Firebase Authentication.<br><br>
-                • Enhanced chat functionality with real-time messaging and responsive UI components for smooth user
-                interaction.</p>
-              <div class="mt-3 text-xs text-zinc-400">Java, Firebase, Android Studio</div>
-            </div>
-            <div class="mt-4 flex gap-3">
-              <a class="px-3 py-2 rounded-md border text-sm" href="https://github.com/JalChauhan/Demo"
-                target="_blank">Repo</a>
-              <a class="px-3 py-2 rounded-md border text-sm"
-                href="https://www.linkedin.com/posts/activity-7293570058822295554-zAP0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAER9CrsBrSqSsUq6FdpjvW0toa7LykFYyLI"
-                target="_blank">Demo</a>
-            </div>
-          </article>
-
-          <!--Card 6-->
-          <article class="card p-6 reveal" data-delay="600">
-            <div>
-              <h3 class="text-lg font-semibold">Portfolio Website</h3>
-              <p class="mt-2 text-sm text-slate-300">• Designed and developed a portfolio using HTML, Tailwind
-                CSS, and animations for smooth visuals.
-                <br><br>
-                • Showcases projects, skills, and certifications in a responsive dark theme with scroll-based effects.
-                <br><br>
-                • Focused on minimal design, fast loading, and clear presentation of work.
-              </p>
-              <div class="mt-3 text-xs text-zinc-400">HTML, Tailwind CSS, JavaScript</div>
-            </div>
-            <div class="mt-4 flex gap-3">
-              <a class="px-3 py-2 rounded-md border text-sm" href="https://github.com/Viidhii19/portfolio"
-                target="_blank">Repo</a>
-              <a class="px-3 py-2 rounded-md border text-sm" href="https://viidhii19.github.io/portfolio/"
-                target="_blank">Demo</a>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- Expericnce-->
-
-      <section id="experience" class="mb-12 reveal" data-delay="600">
-        <h2 class="text-2xl font-semibold mb-3">Experience</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="card p-6">
-            <h3 class="font-semibold text-lg">Param Group of Companies – AI/ML Intern</h3>
-            <p class="mt-2 text-sm text-slate-300">
-              • Built and compared SVM, Logistic Regression, Naive Bayes, ANN, and CNN models in Python.<br><br>
-              • Trained ANN and CNN models on MNIST for handwritten digit classification.<br><br>
-              • Implemented CNN-based image classification and YOLO models for real-time object detection.<br><br>
-              • Evaluated and optimized models using accuracy, precision/recall, F1-score, and confusion matrices.<br><br>
-            </p>
-            <p class="mt-2 text-xs text-zinc-400">Jan 2026 - Present</p>
-          </div>
-
-          <div class="card p-6">
-            <h3 class="font-semibold text-lg">YBI Foundation – Data Analytics Intern</h3>
-            <p class="mt-2 text-sm text-slate-300">
-              • Applied data analytics, statistical modeling, and machine learning techniques to extract actionable
-              insights from complex datasets.<br><br>
-              • Worked on end-to-end data pipelines, including data preprocessing, analysis, and model development using
-              Python and SQL.<br><br>
-              • Strengthened foundational knowledge in data science, algorithms, and data structures.
-            </p>
-            <p class="mt-2 text-xs text-zinc-400">Aug 2023 – Sep 2023</p>
-          </div>
-
-          <div class="card p-6">
-            <h3 class="font-semibold text-lg">Cognifyz Technologies – Java Development Intern</h3>
-            <p class="mt-2 text-sm text-slate-300">
-              • Gained hands-on experience in Java application development, focusing on core concepts such as OOPs,
-              multithreading, and exception handling.<br><br>
-              • Built and debugged Java-based modules, reinforcing practical understanding of backend
-              development.<br><br>
-              • Strengthened problem-solving skills through algorithmic challenges and real-time code implementation.
-            </p>
-            <p class="mt-2 text-xs text-zinc-400">Dec 2024 – Jan 2025</p>
-          </div>
-
-
-        </div>
-      </section>
-
-      <!-- CERTIFICATIONS -->
-      <section id="certs" class="mb-12 reveal" data-delay="640">
-        <h2 class="text-2xl font-semibold mb-3">Certifications</h2>
-        <div class="card p-6">
-          <ol class="list-decimal pl-5 text-slate-300 space-y-2">
-            <li>Code Unnati Advanced Course 3.0 — Code Unnati </li>
-            <li>Ethical Hacker — Cisco Networking Academy</li>
-            <li>Python Bootcamp — Sanfoundry</li>
-            <li>Foundations of Cybersecurity — Google</li>
-            <li>5-Day AI Agents Intensive Course with Google — Kaggle X Google</li>
-            <li>3-Day Robotics Workshop — Bharat Space Education Research Centre </li>
-            <li>Java Certification Training — Simplilearn</li>
-
-
-          </ol>
-        </div>
-      </section>
-
-      <!-- ACHIEVEMENTS -->
-      <section id="achievements" class="mb-12 reveal" data-delay="700">
-        <h2 class="text-2xl font-semibold mb-3">Achievements & Activities</h2>
-        <div class="card p-6">
-          <ol class="list-decimal pl-5 text-slate-300 space-y-2">
-            <li>AIU Anveshan 2024 – West Zone, DY Patil University</li>
-            <li>New India Vibrant Hackathon 2023 – Government of Gujarat</li>
-            <li>ODOO X MSU Hackathon 2025 – MSU Baroda</li>
-            <li>Code Unnati Marathon 2025</li>
-            <li>Sports Week 2023 & Carnival 2025 – KPGU</li>
-            <li>AWS Community Day – AI/ML Edition 2023</li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" class="mb-12 reveal" data-delay="760">
-        <h2 class="text-2xl font-semibold mb-3">Contact</h2>
-        <div class="card p-6">
-          <p class="text-sm text-slate-300">Email: <a class="font-medium text-white"
-              href="mailto:vidhigandhi2004@gmail.com">vidhigandhi2004@gmail.com</a></p>
-          <p class="mt-2 text-sm text-slate-300">Phone: <span class="font-medium">+91 9426084421</span></p>
-          <div class="mt-4 flex gap-3">
-            <a class="px-3 py-2 rounded-md border text-sm" href="https://github.com/Viidhii19"
-              target="_blank">GitHub</a>
-            <a class="px-3 py-2 rounded-md border text-sm" href="https://www.linkedin.com/in/vidhi-g-a23990280/"
-              target="_blank">LinkedIn</a>
-
-            <a class="px-3 py-2 rounded-md border text-sm"
-              href="https://drive.google.com/file/d/1LSo93Kvu9c5y9m_LGYCx4HuoDqojwfdK/view?usp=sharing"
-              target="_blank">Resume</a>
-          </div>
-        </div>
-
-    </div>
     </section>
 
-    <footer class="text-sm text-zinc-500 pt-10 pb-20 text-center">© 2025 Vidhi Gandhi
+    <section id="projects" class="border-t border-gray-800">
+        <div class="max-w-5xl mx-auto px-6 py-20">
+            <h2 class="text-2xl font-bold text-white mb-10">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <div class="bg-gray-800/40 border border-gray-700 rounded-lg overflow-hidden hover:border-gray-500 transition duration-300">
+                    <img src="./assets/rag-system-screenshot.jpg" alt="Restaurant Review RAG System UI" class="w-full h-48 object-cover bg-gray-800">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Restaurant Review Analysis System</h3>
+                        <p class="text-sm text-gray-400 mb-4 h-20 overflow-hidden">
+                            Built a RAG system to analyze and summarize customer reviews using semantic search, Ollama embeddings, and ChromaDB. Delivered via an interactive Streamlit application.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold text-gray-400 bg-gray-900 px-2 py-1 rounded">LangChain</span>
+                            <span class="text-xs font-semibold text-gray-400 bg-gray-900 px-2 py-1 rounded">ChromaDB</span>
+                            <span class="text-xs font-semibold text-gray-400 bg-gray-900 px-2 py-1 rounded">Streamlit</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-sm text-blue-400 hover:text-blue-300 font-medium">GitHub Repo &rarr;</a>
+                            <a href="#" class="text-sm text-blue-400 hover:text-blue-300 font-medium">Live Demo &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800/40 border border-gray-700 rounded-lg overflow-hidden hover:border-gray-500 transition duration-300">
+                    <img src="./assets/chatbot-screenshot.jpg" alt="Customer Care Chatbot UI" class="w-full h-48 object-cover bg-gray-800">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Customer Care Q&A Chatbot</h3>
+                        <p class="text-sm text-gray-400 mb-4 h-20 overflow-hidden">
+                            Developed an intelligent support bot leveraging Google Gemini 2.5 Flash and FAISS vector embeddings to generate accurate, context-based responses from custom FAQ data.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold text-gray-400 bg-gray-900 px-2 py-1 rounded">Gemini API</span>
+                            <span class="text-xs font-semibold text-gray-400 bg-gray-900 px-2 py-1 rounded">FAISS</span>
+                            <span class="text-xs font-semibold text-gray-400 bg-gray-900 px-2 py-1 rounded">HuggingFace</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-sm text-blue-400 hover:text-blue-300 font-medium">GitHub Repo &rarr;</a>
+                            <a href="#" class="text-sm text-blue-400 hover:text-blue-300 font-medium">Live Demo &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-gray-800 bg-gray-900 py-8">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 Vidhi Gandhi. Built for speed and clarity.</p>
+        </div>
     </footer>
-    </div>
-  </main>
 
-  <!-- Typed.js (still runs, but cursor hidden) -->
-  <script src="https://unpkg.com/typed.js@2.1.2/dist/typed.umd.js"></script>
-  <script>
-    const mobileBtn = document.getElementById('mobileNavBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileBtn?.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    new Typed('#typed', {
-      strings: ["Building practical systems and exploring real-world projects that shape my learning."],
-      typeSpeed: 35,
-      backSpeed: 0,
-      showCursor: false
-    });
-  </script>
 </body>
-
 </html>
-
