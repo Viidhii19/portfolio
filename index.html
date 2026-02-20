@@ -1,351 +1,300 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vidhi Gandhi — Portfolio</title>
-  <meta name="description" content="Vidhi Gandhi — AI/ML and Cybersecurity Enthusiast" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhi Gandhi | AI/ML Engineer</title>
+    <meta name="description" content="Portfolio of Vidhi Gandhi, specializing in AI/ML, RAG pipelines, and cybersecurity.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Menlo', 'monospace'],
+                    },
+                    colors: {
+                        zinc: {
+                            900: '#18181b',
+                            950: '#09090b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
-
-  <style>
-    :root {
-      --bg-1: #030309;
-      --bg-2: #0b0b11;
-      --accent1: #7c3aed;
-      --accent2: #06b6d4;
-      --muted: #98a0b3;
-    }
-
-    html, body {
-      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-      background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
-      color: #e6eef8;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: var(--bg-1); }
-    ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--accent1); }
-
-    .neon {
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      box-shadow: 0 6px 18px rgba(12, 12, 20, 0.6);
-      border-radius: 14px;
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.15);
-      transform: translateY(-4px);
-      border-color: rgba(124, 58, 237, 0.3);
-    }
-  </style>
-</head>
-
-<body>
-  <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[rgba(3,3,9,0.8)] border-b border-white/5">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 flex items-center justify-center font-bold text-xl text-white">V</div>
-        <div class="hidden sm:block">
-          <div class="text-sm font-semibold">Vidhi Gandhi</div>
-          <div class="text-xs text-[--muted]">AI/ML & Cybersecurity</div>
-        </div>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-        <a href="#about" class="hover:text-cyan-400 transition">About</a>
-        <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
-        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
-        <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
-        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="home" class="pt-24 pb-24">
-    <div class="max-w-6xl mx-auto px-6">
-      
-      <section class="relative overflow-hidden flex items-center py-20 md:py-32">
-        <div class="absolute inset-0 -z-10">
-          <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-indigo-600 via-purple-600 to-sky-500 opacity-20 blur-[100px]"></div>
-        </div>
-
-        <div class="max-w-3xl text-left">
-          <p class="text-cyan-400 font-semibold mb-2 tracking-wide">Hello — I’m</p>
-          <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6">
-            Vidhi <span class="neon">Gandhi</span>
-          </h1>
-          <p class="text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl">
-            A motivated and curious learner starting my journey in the tech field. Passionate about building practical skills and engineering intelligent, real-world systems.
-          </p>
-          <div class="flex gap-4">
-            <a href="https://drive.google.com/file/d/1LSo93Kvu9c5y9m_LGYCx4HuoDqojwfdK/view?usp=drive_link" target="_blank" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-semibold rounded-md hover:opacity-90 transition">View Resume</a>
-            <a href="#projects" class="px-6 py-3 border border-zinc-700 text-white font-semibold rounded-md hover:bg-white/5 transition">See My Work</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="mb-20 pt-10">
-        <h2 class="text-3xl font-bold mb-6 flex items-center gap-2"><span class="text-cyan-400">01.</span> About Me</h2>
-        <div class="card p-8">
-          <p class="text-slate-300 leading-relaxed mb-6">
-            I’m a final-year Computer Science Engineering student with a growing interest in Artificial Intelligence, Machine Learning, Cybersecurity, and other emerging technologies. I am highly motivated to gain practical experience through hands-on projects and industry exposure.
-          </p>
-          <h3 class="font-semibold text-white mb-3">🔍 Currently focused on:</h3>
-          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-300 text-sm">
-            <li class="flex items-center gap-2"><span class="text-purple-400">▹</span> Learning and applying AI & ML concepts</li>
-            <li class="flex items-center gap-2"><span class="text-purple-400">▹</span> Exploring data-driven problem solving</li>
-            <li class="flex items-center gap-2"><span class="text-purple-400">▹</span> Gaining cybersecurity fundamentals</li>
-            <li class="flex items-center gap-2"><span class="text-purple-400">▹</span> Building scalable backend systems</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="skills" class="mb-20 pt-10">
-        <h2 class="text-3xl font-bold mb-6 flex items-center gap-2"><span class="text-cyan-400">02.</span> Technical Arsenal</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          <div class="card p-6">
-            <h3 class="text-sm uppercase tracking-wider text-cyan-400 font-bold mb-4">Languages</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">Python</span>
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">Java</span>
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">C/C++</span>
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">HTML/CSS</span>
-            </div>
-          </div>
-
-          <div class="card p-6">
-            <h3 class="text-sm uppercase tracking-wider text-purple-400 font-bold mb-4">AI & LLM Tech</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">LangChain</span>
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">Gemini API</span>
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">FAISS & RAG</span>
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">HuggingFace</span>
-            </div>
-          </div>
-
-          <div class="card p-6">
-            <h3 class="text-sm uppercase tracking-wider text-sky-400 font-bold mb-4">Tools & Platforms</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">Streamlit</span>
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">Firebase</span>
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">Git/GitHub</span>
-              <span class="bg-white/5 text-slate-200 px-3 py-1 rounded-md text-sm border border-white/10">Arduino</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <section id="projects" class="mb-20 pt-10">
-        <h2 class="text-3xl font-bold mb-6 flex items-center gap-2"><span class="text-cyan-400">03.</span> Featured Work</h2>
+    <style>
+        body {
+            background-color: #09090b; /* zinc-950 */
+            color: #d4d4d8; /* zinc-300 */
+            -webkit-font-smoothing: antialiased;
+        }
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <article class="card overflow-hidden flex flex-col">
-            <img src="./assets/rag-review.jpg" alt="Restaurant RAG System" class="w-full h-48 object-cover border-b border-white/10">
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-white mb-2">Restaurant Review Analysis System</h3>
-              <p class="text-sm text-slate-300 mb-4 flex-grow">
-                Built a RAG system using semantic search to summarize reviews. Implemented Ollama embeddings with ChromaDB to retrieve context for insights on food, service, and pricing.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6 text-xs text-cyan-300">
-                <span class="bg-cyan-900/30 px-2 py-1 rounded">LangChain</span>
-                <span class="bg-cyan-900/30 px-2 py-1 rounded">ChromaDB</span>
-                <span class="bg-cyan-900/30 px-2 py-1 rounded">Streamlit</span>
-              </div>
-              <div class="flex gap-4">
-                <a href="https://github.com/Viidhii19/Restaurant-Review-Analysis-System" target="_blank" class="text-sm font-semibold hover:text-cyan-400 transition">GitHub &rarr;</a>
-                <a href="https://drive.google.com/file/d/1ut47COhxKixWsZ5OpvvXKjOsvhZ8-0qh/view" target="_blank" class="text-sm font-semibold hover:text-cyan-400 transition">Demo &rarr;</a>
-              </div>
-            </div>
-          </article>
+        /* Minimalist Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #52525b; }
 
-          <article class="card overflow-hidden flex flex-col">
-            <img src="./assets/chatbot.jpg" alt="Customer Care Chatbot" class="w-full h-48 object-cover border-b border-white/10">
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-white mb-2">Customer Care Q&A Chatbot</h3>
-              <p class="text-sm text-slate-300 mb-4 flex-grow">
-                Developed an intelligent bot leveraging Google Gemini 2.5 Flash and FAISS for accurate, context-based responses. Features an interactive Streamlit UI for dynamic CSV data updates.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6 text-xs text-purple-300">
-                <span class="bg-purple-900/30 px-2 py-1 rounded">Gemini API</span>
-                <span class="bg-purple-900/30 px-2 py-1 rounded">FAISS</span>
-                <span class="bg-purple-900/30 px-2 py-1 rounded">HuggingFace</span>
-              </div>
-              <div class="flex gap-4">
-                <a href="https://github.com/Viidhii19/CustomerCare-Q-A" target="_blank" class="text-sm font-semibold hover:text-purple-400 transition">GitHub &rarr;</a>
-                <a href="https://drive.google.com/file/d/1talDW9UhPlmtVaEBEzLmFyTeA33nXQhw/view" target="_blank" class="text-sm font-semibold hover:text-purple-400 transition">Demo &rarr;</a>
-              </div>
-            </div>
-          </article>
+        /* Typography selections */
+        ::selection { background: #e4e4e7; color: #09090b; }
+    </style>
+</head>
+<body class="antialiased selection:bg-zinc-200 selection:text-zinc-950 font-sans">
 
-          <article class="card overflow-hidden flex flex-col">
-            <img src="./assets/video-gen.jpg" alt="Fact Video Generator" class="w-full h-48 object-cover border-b border-white/10">
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-white mb-2">Fact Video Generator AI Agent</h3>
-              <p class="text-sm text-slate-300 mb-4 flex-grow">
-                An AI-powered video generator using the Gemini API for fact creation and gTTS for narration. Automates text overlays and dynamic backgrounds using MoviePy and FFmpeg.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6 text-xs text-sky-300">
-                <span class="bg-sky-900/30 px-2 py-1 rounded">Python</span>
-                <span class="bg-sky-900/30 px-2 py-1 rounded">FFmpeg</span>
-                <span class="bg-sky-900/30 px-2 py-1 rounded">MoviePy</span>
-              </div>
-              <div class="flex gap-4">
-                <a href="https://github.com/Viidhii19/Fact_video_generator" target="_blank" class="text-sm font-semibold hover:text-sky-400 transition">GitHub &rarr;</a>
-                <a href="https://drive.google.com/file/d/1HUqh7W1xH0wEY7x5zF5XiaKxN82b0y8v/view?pli=1" target="_blank" class="text-sm font-semibold hover:text-sky-400 transition">Demo &rarr;</a>
-              </div>
+    <nav class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/50">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="text-zinc-100 font-semibold tracking-tight text-lg">VG.</span>
+            <div class="hidden md:flex gap-6 text-sm font-medium text-zinc-400">
+                <a href="#projects" class="hover:text-zinc-100 transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-zinc-100 transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-zinc-100 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-zinc-100 transition-colors">Contact</a>
             </div>
-          </article>
-
-          <article class="card overflow-hidden flex flex-col">
-            <img src="./assets/seatbelt.jpg" alt="Seatbelt Heart Monitor" class="w-full h-48 object-cover border-b border-white/10">
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-white mb-2">Seatbelt Heart Monitoring System</h3>
-              <p class="text-sm text-slate-300 mb-4 flex-grow">
-                Engineered an IoT-enabled seatbelt that reads heart rate sensors to track passenger vitals in real time, featuring an emergency alert system for crash/health notifications.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6 text-xs text-green-300">
-                <span class="bg-green-900/30 px-2 py-1 rounded">Arduino</span>
-                <span class="bg-green-900/30 px-2 py-1 rounded">IoT Sensors</span>
-                <span class="bg-green-900/30 px-2 py-1 rounded">C/C++</span>
-              </div>
-              <div class="flex gap-4">
-                <a href="https://github.com/JalChauhan/Seatbelt-based-Heart-Monitoring-System_Jal-Chauhan_23" target="_blank" class="text-sm font-semibold hover:text-green-400 transition">GitHub &rarr;</a>
-                <a href="https://drive.google.com/file/d/1-UWxLSggBsvefDUxqmtRvdPj_fGyDl87/view" target="_blank" class="text-sm font-semibold hover:text-green-400 transition">Demo &rarr;</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card overflow-hidden flex flex-col">
-            <img src="./assets/chatz.jpg" alt="CHATZ App" class="w-full h-48 object-cover border-b border-white/10">
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-white mb-2">CHATZ – Real-time Chat App</h3>
-              <p class="text-sm text-slate-300 mb-4 flex-grow">
-                Built a real-time Android chat application using Java and Firebase Realtime Database. Implemented secure Firebase Authentication and responsive UI components.
-              </p>
-              <div class="flex flex-wrap gap-2 mb-6 text-xs text-orange-300">
-                <span class="bg-orange-900/30 px-2 py-1 rounded">Java</span>
-                <span class="bg-orange-900/30 px-2 py-1 rounded">Firebase</span>
-                <span class="bg-orange-900/30 px-2 py-1 rounded">Android Studio</span>
-              </div>
-              <div class="flex gap-4">
-                <a href="https://github.com/JalChauhan/Demo" target="_blank" class="text-sm font-semibold hover:text-orange-400 transition">GitHub &rarr;</a>
-                <a href="https://www.linkedin.com/posts/activity-7293570058822295554-zAP0?utm_source=share&utm_medium=member_desktop" target="_blank" class="text-sm font-semibold hover:text-orange-400 transition">Demo &rarr;</a>
-              </div>
-            </div>
-          </article>
-
         </div>
-      </section>
+    </nav>
 
-      <section id="experience" class="mb-20 pt-10">
-        <h2 class="text-3xl font-bold mb-6 flex items-center gap-2"><span class="text-cyan-400">04.</span> Experience</h2>
-        <div class="space-y-6">
-          
-          <div class="card p-6 md:p-8 flex flex-col md:flex-row justify-between gap-4">
-            <div>
-              <h3 class="text-xl font-bold text-white">AI/ML Intern</h3>
-              <p class="text-cyan-400 font-semibold mb-4">Param Group of Companies</p>
-              <ul class="text-slate-300 text-sm space-y-2 max-w-2xl">
-                <li>• Trained ANN and CNN models on MNIST for handwritten digit classification.</li>
-                <li>• Implemented CNN-based image classification and YOLO models for real-time object detection.</li>
-                <li>• Evaluated models using accuracy, precision/recall, F1-score, and confusion matrices.</li>
-              </ul>
+    <main class="max-w-4xl mx-auto px-6 pt-32 pb-24 space-y-32">
+
+        <section id="hero" class="space-y-8 animate-fade-in">
+            <div class="space-y-4">
+                <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-zinc-100">
+                    Vidhi Gandhi
+                </h1>
+                <p class="text-xl text-zinc-400 max-w-2xl leading-relaxed">
+                    I engineer intelligent, scalable systems. Focused on AI/ML pipelines, retrieval-augmented generation (RAG), and data-driven applications.
+                </p>
             </div>
-            <div class="text-sm text-slate-500 font-mono whitespace-nowrap">Jan 2026 - Present</div>
-          </div>
-
-          <div class="card p-6 md:p-8 flex flex-col md:flex-row justify-between gap-4">
-            <div>
-              <h3 class="text-xl font-bold text-white">Java Development Intern</h3>
-              <p class="text-cyan-400 font-semibold mb-4">Cognifyz Technologies</p>
-              <ul class="text-slate-300 text-sm space-y-2 max-w-2xl">
-                <li>• Built and debugged Java-based backend modules focusing on OOPs and multithreading.</li>
-                <li>• Strengthened problem-solving skills through real-time code implementation.</li>
-              </ul>
+            
+            <div class="flex flex-wrap gap-4 pt-4 text-sm font-medium">
+                <a href="#projects" class="px-5 py-2.5 bg-zinc-100 text-zinc-900 rounded hover:bg-zinc-200 transition-colors">
+                    View Work
+                </a>
+                <a href="https://drive.google.com/file/d/1LSo93Kvu9c5y9m_LGYCx4HuoDqojwfdK/view?usp=drive_link" target="_blank" class="px-5 py-2.5 border border-zinc-800 text-zinc-300 rounded hover:bg-zinc-900 hover:text-zinc-100 transition-colors">
+                    Resume
+                </a>
+                <a href="https://github.com/Viidhii19" target="_blank" class="px-5 py-2.5 border border-zinc-800 text-zinc-300 rounded hover:bg-zinc-900 hover:text-zinc-100 transition-colors">
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/vidhi-g-a23990280/" target="_blank" class="px-5 py-2.5 border border-zinc-800 text-zinc-300 rounded hover:bg-zinc-900 hover:text-zinc-100 transition-colors">
+                    LinkedIn
+                </a>
             </div>
-            <div class="text-sm text-slate-500 font-mono whitespace-nowrap">Dec 2024 - Jan 2025</div>
-          </div>
+        </section>
 
-          <div class="card p-6 md:p-8 flex flex-col md:flex-row justify-between gap-4">
-            <div>
-              <h3 class="text-xl font-bold text-white">Data Analytics Intern</h3>
-              <p class="text-cyan-400 font-semibold mb-4">YBI Foundation</p>
-              <ul class="text-slate-300 text-sm space-y-2 max-w-2xl">
-                <li>• Applied statistical modeling to extract actionable insights from complex datasets.</li>
-                <li>• Worked on end-to-end data pipelines using Python and SQL.</li>
-              </ul>
+        <section id="projects" class="space-y-10">
+            <h2 class="text-2xl font-semibold tracking-tight text-zinc-100">Selected Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="group p-6 rounded-lg border border-zinc-800/60 bg-zinc-900/20 hover:border-zinc-600 transition-colors flex flex-col h-full">
+                    <div class="flex-grow space-y-4">
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-medium text-zinc-100">Restaurant Review Analysis System</h3>
+                            <p class="text-sm text-zinc-400">Semantic search and summarization pipeline for unstructured review data.</p>
+                        </div>
+                        <ul class="text-sm text-zinc-400 space-y-2 list-disc list-inside">
+                            <li>Architected a RAG pipeline to process and summarize large datasets of customer feedback.</li>
+                            <li>Integrated Ollama embeddings and ChromaDB for high-accuracy semantic retrieval.</li>
+                            <li>Deployed an interactive Streamlit application for real-time natural language querying.</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 space-y-4">
+                        <div class="flex gap-2 text-xs font-mono text-zinc-500">
+                            <span>LangChain</span> • <span>ChromaDB</span> • <span>Llama 3.2</span>
+                        </div>
+                        <div class="flex gap-4 text-sm font-medium">
+                            <a href="https://github.com/Viidhii19/Restaurant-Review-Analysis-System" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Source</a>
+                            <a href="https://drive.google.com/file/d/1ut47COhxKixWsZ5OpvvXKjOsvhZ8-0qh/view" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group p-6 rounded-lg border border-zinc-800/60 bg-zinc-900/20 hover:border-zinc-600 transition-colors flex flex-col h-full">
+                    <div class="flex-grow space-y-4">
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-medium text-zinc-100">Customer Care Q&A Agent</h3>
+                            <p class="text-sm text-zinc-400">LLM-powered support agent with custom knowledge base integration.</p>
+                        </div>
+                        <ul class="text-sm text-zinc-400 space-y-2 list-disc list-inside">
+                            <li>Built an autonomous support agent using Google Gemini 2.5 Flash.</li>
+                            <li>Implemented dense vector search utilizing HuggingFace models and FAISS index.</li>
+                            <li>Engineered dynamic data-ingestion capabilities from raw CSVs via a Streamlit interface.</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 space-y-4">
+                        <div class="flex gap-2 text-xs font-mono text-zinc-500">
+                            <span>Gemini API</span> • <span>FAISS</span> • <span>Streamlit</span>
+                        </div>
+                        <div class="flex gap-4 text-sm font-medium">
+                            <a href="https://github.com/Viidhii19/CustomerCare-Q-A" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Source</a>
+                            <a href="https://drive.google.com/file/d/1talDW9UhPlmtVaEBEzLmFyTeA33nXQhw/view" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group p-6 rounded-lg border border-zinc-800/60 bg-zinc-900/20 hover:border-zinc-600 transition-colors flex flex-col h-full">
+                    <div class="flex-grow space-y-4">
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-medium text-zinc-100">Automated Video Generator</h3>
+                            <p class="text-sm text-zinc-400">Content creation pipeline combining LLMs, TTS, and video rendering.</p>
+                        </div>
+                        <ul class="text-sm text-zinc-400 space-y-2 list-disc list-inside">
+                            <li>Programmed an end-to-end Python agent to generate fact-based video content autonomously.</li>
+                            <li>Synchronized AI-generated audio (gTTS) with dynamic text overlays using MoviePy and FFmpeg.</li>
+                            <li>Designed state-management using JSON to guarantee content uniqueness across executions.</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 space-y-4">
+                        <div class="flex gap-2 text-xs font-mono text-zinc-500">
+                            <span>Python</span> • <span>FFmpeg</span> • <span>MoviePy</span>
+                        </div>
+                        <div class="flex gap-4 text-sm font-medium">
+                            <a href="https://github.com/Viidhii19/Fact_video_generator" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Source</a>
+                            <a href="https://drive.google.com/file/d/1HUqh7W1xH0wEY7x5zF5XiaKxN82b0y8v/view?pli=1" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group p-6 rounded-lg border border-zinc-800/60 bg-zinc-900/20 hover:border-zinc-600 transition-colors flex flex-col h-full">
+                    <div class="flex-grow space-y-4">
+                        <div class="space-y-1">
+                            <h3 class="text-lg font-medium text-zinc-100">IoT Heart Monitoring System</h3>
+                            <p class="text-sm text-zinc-400">Hardware-software integration for real-time biometric tracking.</p>
+                        </div>
+                        <ul class="text-sm text-zinc-400 space-y-2 list-disc list-inside">
+                            <li>Engineered a smart seatbelt embedded with pulse sensors to monitor passenger vitals in transit.</li>
+                            <li>Developed a fault-tolerant logic board (C/C++) to trigger emergency protocols during anomalies.</li>
+                            <li>Optimized sensor data read rates to ensure continuous, reliable monitoring without latency.</li>
+                        </ul>
+                    </div>
+                    <div class="pt-6 space-y-4">
+                        <div class="flex gap-2 text-xs font-mono text-zinc-500">
+                            <span>C/C++</span> • <span>Arduino</span> • <span>IoT</span>
+                        </div>
+                        <div class="flex gap-4 text-sm font-medium">
+                            <a href="https://github.com/JalChauhan/Seatbelt-based-Heart-Monitoring-System_Jal-Chauhan_23" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Source</a>
+                            <a href="https://drive.google.com/file/d/1-UWxLSggBsvefDUxqmtRvdPj_fGyDl87/view" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Demo</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="text-sm text-slate-500 font-mono whitespace-nowrap">Aug 2023 - Sep 2023</div>
-          </div>
+        </section>
 
-        </div>
-      </section>
+        <section id="experience" class="space-y-10">
+            <h2 class="text-2xl font-semibold tracking-tight text-zinc-100">Experience</h2>
+            
+            <div class="relative border-l border-zinc-800 ml-3 space-y-12">
+                
+                <div class="relative pl-8">
+                    <div class="absolute w-3 h-3 bg-zinc-400 rounded-full -left-[6.5px] top-1.5 ring-4 ring-zinc-950"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
+                        <h3 class="text-lg font-medium text-zinc-100">AI/ML Intern <span class="text-zinc-500 font-normal">— Param Group of Companies</span></h3>
+                        <span class="text-sm font-mono text-zinc-500 mt-1 sm:mt-0">Jan 2026 — Present</span>
+                    </div>
+                    <ul class="text-sm text-zinc-400 space-y-2 list-none">
+                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Training and optimizing ANN and CNN architectures on high-dimensional datasets for computer vision tasks.</li>
+                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Implementing real-time object detection systems utilizing YOLO algorithms.</li>
+                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Evaluating model integrity via precision/recall, F1-scores, and confusion matrices.</li>
+                    </ul>
+                </div>
 
-      <section class="mb-20 pt-10 grid md:grid-cols-2 gap-8">
-        <div>
-          <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="text-cyan-400">05.</span> Certifications</h2>
-          <div class="card p-6 h-full">
-            <ol class="list-decimal pl-5 text-sm text-slate-300 space-y-3 marker:text-cyan-600">
-              <li>Code Unnati Advanced Course 3.0 — <span class="text-white">Code Unnati</span></li>
-              <li>Ethical Hacker — <span class="text-white">Cisco Networking Academy</span></li>
-              <li>Python Bootcamp — <span class="text-white">Sanfoundry</span></li>
-              <li>Foundations of Cybersecurity — <span class="text-white">Google</span></li>
-              <li>5-Day AI Agents Intensive Course — <span class="text-white">Kaggle X Google</span></li>
-              <li>3-Day Robotics Workshop — <span class="text-white">Bharat Space Education Centre</span></li>
-              <li>Java Certification Training — <span class="text-white">Simplilearn</span></li>
-            </ol>
-          </div>
-        </div>
+                <div class="relative pl-8">
+                    <div class="absolute w-3 h-3 bg-zinc-800 rounded-full -left-[6.5px] top-1.5 ring-4 ring-zinc-950"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
+                        <h3 class="text-lg font-medium text-zinc-100">Java Development Intern <span class="text-zinc-500 font-normal">— Cognifyz Technologies</span></h3>
+                        <span class="text-sm font-mono text-zinc-500 mt-1 sm:mt-0">Dec 2024 — Jan 2025</span>
+                    </div>
+                    <ul class="text-sm text-zinc-400 space-y-2 list-none">
+                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Engineered and debugged Java backend modules strictly adhering to OOP design principles.</li>
+                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Optimized system execution by integrating multithreading and advanced exception handling.</li>
+                    </ul>
+                </div>
 
-        <div>
-          <h2 class="text-2xl font-bold mb-6 flex items-center gap-2"><span class="text-cyan-400">06.</span> Achievements</h2>
-          <div class="card p-6 h-full">
-            <ol class="list-decimal pl-5 text-sm text-slate-300 space-y-3 marker:text-purple-600">
-              <li>AIU Anveshan 2024 – West Zone, <span class="text-white">DY Patil University</span></li>
-              <li>New India Vibrant Hackathon 2023 – <span class="text-white">Govt of Gujarat</span></li>
-              <li>ODOO X MSU Hackathon 2025 – <span class="text-white">MSU Baroda</span></li>
-              <li>Code Unnati Marathon 2025</li>
-              <li>Sports Week 2023 & Carnival 2025 – <span class="text-white">KPGU</span></li>
-              <li>AWS Community Day – AI/ML Edition 2023</li>
-            </ol>
-          </div>
-        </div>
-      </section>
+                <div class="relative pl-8">
+                    <div class="absolute w-3 h-3 bg-zinc-800 rounded-full -left-[6.5px] top-1.5 ring-4 ring-zinc-950"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
+                        <h3 class="text-lg font-medium text-zinc-100">Data Analytics Intern <span class="text-zinc-500 font-normal">— YBI Foundation</span></h3>
+                        <span class="text-sm font-mono text-zinc-500 mt-1 sm:mt-0">Aug 2023 — Sep 2023</span>
+                    </div>
+                    <ul class="text-sm text-zinc-400 space-y-2 list-none">
+                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Constructed end-to-end data preprocessing pipelines using Python and SQL.</li>
+                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Applied statistical modeling techniques to extract measurable insights from disparate datasets.</li>
+                    </ul>
+                </div>
 
-      <section id="contact" class="pt-10 pb-10 border-t border-white/10 text-center">
-        <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-        <p class="text-slate-400 mb-8">Currently open to internship and collaboration opportunities.</p>
-        <div class="flex justify-center gap-6 mb-10">
-          <a href="mailto:vidhigandhi2004@gmail.com" class="text-slate-300 hover:text-cyan-400 transition">vidhigandhi2004@gmail.com</a>
-          <span class="text-slate-700">|</span>
-          <a href="https://github.com/Viidhii19" target="_blank" class="text-slate-300 hover:text-cyan-400 transition">GitHub</a>
-          <span class="text-slate-700">|</span>
-          <a href="https://www.linkedin.com/in/vidhi-g-a23990280/" target="_blank" class="text-slate-300 hover:text-cyan-400 transition">LinkedIn</a>
-        </div>
-        <p class="text-xs text-slate-600">&copy; 2026 Vidhi Gandhi. Built for speed and clarity.</p>
-      </section>
+            </div>
+        </section>
 
-    </div>
-  </main>
+        <section id="skills" class="space-y-10">
+            <h2 class="text-2xl font-semibold tracking-tight text-zinc-100">Skills & Tooling</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-sm font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-800 pb-2">Languages</h3>
+                    <ul class="text-sm text-zinc-300 space-y-2">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>C/C++</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-sm font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-800 pb-2">AI & Architecture</h3>
+                    <ul class="text-sm text-zinc-300 space-y-2">
+                        <li>LangChain & LLMs</li>
+                        <li>Google Gemini API</li>
+                        <li>Retrieval-Augmented Generation (RAG)</li>
+                        <li>FAISS & HuggingFace</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-sm font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-800 pb-2">Infrastructure & Tools</h3>
+                    <ul class="text-sm text-zinc-300 space-y-2">
+                        <li>Git & GitHub</li>
+                        <li>Streamlit</li>
+                        <li>Firebase</li>
+                        <li>Jupyter & VS Code</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="space-y-6 border-t border-zinc-800/50 pt-10">
+            <h2 class="text-sm font-mono text-zinc-500 uppercase tracking-widest">Select Certifications</h2>
+            <div class="flex flex-wrap gap-3 text-sm text-zinc-400">
+                <span class="px-3 py-1 bg-zinc-900 rounded border border-zinc-800">Google Cybersecurity</span>
+                <span class="px-3 py-1 bg-zinc-900 rounded border border-zinc-800">Cisco Ethical Hacker</span>
+                <span class="px-3 py-1 bg-zinc-900 rounded border border-zinc-800">Kaggle AI Agents</span>
+                <span class="px-3 py-1 bg-zinc-900 rounded border border-zinc-800">Code Unnati Advanced 3.0</span>
+            </div>
+        </section>
+
+        <footer id="contact" class="pt-24 pb-8 space-y-8 border-t border-zinc-800/50">
+            <div class="space-y-2">
+                <h2 class="text-2xl font-semibold tracking-tight text-zinc-100">Let's Build.</h2>
+                <p class="text-zinc-400">Open for roles where I can deploy models and scale systems.</p>
+            </div>
+            
+            <div class="flex flex-wrap gap-6 text-sm font-medium">
+                <a href="mailto:vidhigandhi2004@gmail.com" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">
+                    vidhigandhi2004@gmail.com
+                </a>
+                <a href="https://github.com/Viidhii19" target="_blank" class="text-zinc-400 hover:text-zinc-200 transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/vidhi-g-a23990280/" target="_blank" class="text-zinc-400 hover:text-zinc-200 transition-colors">LinkedIn</a>
+            </div>
+
+            <div class="pt-16 text-xs text-zinc-600 font-mono">
+                &copy; 2026 Vidhi Gandhi. No frameworks, pure code.
+            </div>
+        </footer>
+
+    </main>
 </body>
 </html>
