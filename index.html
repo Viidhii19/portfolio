@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vidhi Gandhi | AI/ML Engineer</title>
-    <meta name="description" content="Portfolio of Vidhi Gandhi, specializing in AI/ML, RAG pipelines, and cybersecurity.">
+    <title>Vidhi Gandhi | AI Engineer</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,289 +11,327 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'Menlo', 'monospace'],
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        zinc: {
-                            900: '#18181b',
-                            950: '#09090b',
-                        }
+                        brand: '#2563EB', /* Professional Royal Blue accent */
+                        dark: '#1F2937', /* Slate 800 for primary text */
+                        light: '#F9FAFB', /* Gray 50 for background */
                     }
                 }
             }
         }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            background-color: #09090b; /* zinc-950 */
-            color: #d4d4d8; /* zinc-300 */
-            -webkit-font-smoothing: antialiased;
-        }
+        body { background-color: #F9FAFB; color: #4B5563; }
+        h1, h2, h3, h4, h5, h6 { color: #1F2937; }
         
-        /* Minimalist Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #52525b; }
+        /* Smooth subtle hover effects typical of this template */
+        .gajda-card {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gajda-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
 
-        /* Typography selections */
-        ::selection { background: #e4e4e7; color: #09090b; }
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #2563EB;
+            border-radius: 2px;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F9FAFB; }
+        ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+        ::selection { background: #2563EB; color: #FFFFFF; }
     </style>
 </head>
-<body class="antialiased selection:bg-zinc-200 selection:text-zinc-950 font-sans">
+<body class="antialiased font-body">
 
-    <nav class="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/50">
-        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <span class="text-zinc-100 font-semibold tracking-tight text-lg">VG.</span>
-            <div class="hidden md:flex gap-6 text-sm font-medium text-zinc-400">
-                <a href="#projects" class="hover:text-zinc-100 transition-colors">Projects</a>
-                <a href="#experience" class="hover:text-zinc-100 transition-colors">Experience</a>
-                <a href="#skills" class="hover:text-zinc-100 transition-colors">Skills</a>
-                <a href="#contact" class="hover:text-zinc-100 transition-colors">Contact</a>
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100 py-4 transition-all">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <div class="text-xl font-heading font-extrabold tracking-tight text-brand">
+                Vidhi Gandhi
             </div>
+            <div class="hidden md:flex gap-8 font-heading font-semibold text-sm text-gray-600 uppercase tracking-wider">
+                <a href="#about" class="hover:text-brand transition-colors">About</a>
+                <a href="#skills" class="hover:text-brand transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-brand transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-brand transition-colors">Experience</a>
+            </div>
+            <a href="#contact" class="hidden md:block px-6 py-2 bg-brand text-white font-heading font-bold text-xs uppercase tracking-wider rounded-full hover:bg-blue-700 transition-colors shadow-md shadow-blue-500/30">
+                Contact Me
+            </a>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 pt-32 pb-24 space-y-32">
-
-        <section id="hero" class="space-y-8 animate-fade-in">
-            <div class="space-y-4">
-                <h1 class="text-5xl md:text-6xl font-bold tracking-tight text-zinc-100">
-                    Vidhi Gandhi
-                </h1>
-                <p class="text-xl text-zinc-400 max-w-2xl leading-relaxed">
-                    I engineer intelligent, scalable systems. Focused on AI/ML pipelines, retrieval-augmented generation (RAG), and data-driven applications.
-                </p>
-            </div>
-            
-            <div class="flex flex-wrap gap-4 pt-4 text-sm font-medium">
-                <a href="#projects" class="px-5 py-2.5 bg-zinc-100 text-zinc-900 rounded hover:bg-zinc-200 transition-colors">
-                    View Work
+    <header id="about" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-3xl mx-auto px-6 text-center space-y-8">
+            <span class="font-heading font-bold text-brand uppercase tracking-widest text-sm">AI/ML and Cybersecurity Enthusiast </span>
+            <h1 class="text-5xl md:text-7xl font-heading font-extrabold tracking-tight leading-tight">
+                Hi, <br> I am  Vidhi Gandhi !
+            </h1>
+            <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">
+                Building practical AI systems computer vision, recommendation engines, and LLM-based applications with a focus on implementation and performance.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-6">
+                <a href="#projects" class="px-8 py-4 bg-brand text-white font-heading font-bold text-sm uppercase tracking-wider rounded shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-colors">
+                    View Projects
                 </a>
-                <a href="https://drive.google.com/file/d/1LSo93Kvu9c5y9m_LGYCx4HuoDqojwfdK/view?usp=drive_link" target="_blank" class="px-5 py-2.5 border border-zinc-800 text-zinc-300 rounded hover:bg-zinc-900 hover:text-zinc-100 transition-colors">
+                <a href="https://drive.google.com/file/d/1LSo93Kvu9c5y9m_LGYCx4HuoDqojwfdK/view" target="_blank" class="px-8 py-4 bg-white text-dark font-heading font-bold text-sm uppercase tracking-wider rounded shadow border border-gray-200 hover:border-brand hover:text-brand transition-colors">
                     Resume
                 </a>
-                <a href="https://github.com/Viidhii19" target="_blank" class="px-5 py-2.5 border border-zinc-800 text-zinc-300 rounded hover:bg-zinc-900 hover:text-zinc-100 transition-colors">
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/vidhi-g-a23990280/" target="_blank" class="px-5 py-2.5 border border-zinc-800 text-zinc-300 rounded hover:bg-zinc-900 hover:text-zinc-100 transition-colors">
-                    LinkedIn
-                </a>
             </div>
-        </section>
+        </div>
+    </header>
 
-        <section id="projects" class="space-y-10">
-            <h2 class="text-2xl font-semibold tracking-tight text-zinc-100">Selected Projects</h2>
+    <section id="skills" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6 text-center space-y-16">
+            <h2 class="text-3xl font-heading font-bold uppercase tracking-wide section-title inline-block">Technical Skills</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="group p-6 rounded-lg border border-zinc-800/60 bg-zinc-900/20 hover:border-zinc-600 transition-colors flex flex-col h-full">
-                    <div class="flex-grow space-y-4">
-                        <div class="space-y-1">
-                            <h3 class="text-lg font-medium text-zinc-100">Restaurant Review Analysis System</h3>
-                            <p class="text-sm text-zinc-400">Semantic search and summarization pipeline for unstructured review data.</p>
-                        </div>
-                        <ul class="text-sm text-zinc-400 space-y-2 list-disc list-inside">
-                            <li>Architected a RAG pipeline to process and summarize large datasets of customer feedback.</li>
-                            <li>Integrated Ollama embeddings and ChromaDB for high-accuracy semantic retrieval.</li>
-                            <li>Deployed an interactive Streamlit application for real-time natural language querying.</li>
-                        </ul>
-                    </div>
-                    <div class="pt-6 space-y-4">
-                        <div class="flex gap-2 text-xs font-mono text-zinc-500">
-                            <span>LangChain</span> • <span>ChromaDB</span> • <span>Llama 3.2</span>
-                        </div>
-                        <div class="flex gap-4 text-sm font-medium">
-                            <a href="https://github.com/Viidhii19/Restaurant-Review-Analysis-System" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Source</a>
-                            <a href="https://drive.google.com/file/d/1ut47COhxKixWsZ5OpvvXKjOsvhZ8-0qh/view" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Demo</a>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+                <div class="space-y-4 text-center md:text-left">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mx-auto md:mx-0 mb-6 text-brand font-bold text-xl">01</div>
+                    <h3 class="text-xl font-heading font-bold">Languages & Core</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Foundation in object-oriented and functional programming for scalable systems.</p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-2">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Python</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Java</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">C/C++</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">SQL</span>
                     </div>
                 </div>
 
-                <div class="group p-6 rounded-lg border border-zinc-800/60 bg-zinc-900/20 hover:border-zinc-600 transition-colors flex flex-col h-full">
-                    <div class="flex-grow space-y-4">
-                        <div class="space-y-1">
-                            <h3 class="text-lg font-medium text-zinc-100">Customer Care Q&A Agent</h3>
-                            <p class="text-sm text-zinc-400">LLM-powered support agent with custom knowledge base integration.</p>
-                        </div>
-                        <ul class="text-sm text-zinc-400 space-y-2 list-disc list-inside">
-                            <li>Built an autonomous support agent using Google Gemini 2.5 Flash.</li>
-                            <li>Implemented dense vector search utilizing HuggingFace models and FAISS index.</li>
-                            <li>Engineered dynamic data-ingestion capabilities from raw CSVs via a Streamlit interface.</li>
-                        </ul>
-                    </div>
-                    <div class="pt-6 space-y-4">
-                        <div class="flex gap-2 text-xs font-mono text-zinc-500">
-                            <span>Gemini API</span> • <span>FAISS</span> • <span>Streamlit</span>
-                        </div>
-                        <div class="flex gap-4 text-sm font-medium">
-                            <a href="https://github.com/Viidhii19/CustomerCare-Q-A" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Source</a>
-                            <a href="https://drive.google.com/file/d/1talDW9UhPlmtVaEBEzLmFyTeA33nXQhw/view" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Demo</a>
-                        </div>
+                <div class="space-y-4 text-center md:text-left">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mx-auto md:mx-0 mb-6 text-brand font-bold text-xl">02</div>
+                    <h3 class="text-xl font-heading font-bold">AI & Architecture</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Designing intelligent pipelines, retrieval models, and autonomous agents.</p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-2">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">LangChain</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Gemini API</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">RAG</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">FAISS & ChromaDB</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Scikit-learn</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">YOLO</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">OpenCV</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">HuggingFace Transformers</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Collaborative Filtering</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Transformer-based Modeling</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Embeddings</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Model Evaluation</span>
                     </div>
                 </div>
 
-                <div class="group p-6 rounded-lg border border-zinc-800/60 bg-zinc-900/20 hover:border-zinc-600 transition-colors flex flex-col h-full">
-                    <div class="flex-grow space-y-4">
-                        <div class="space-y-1">
-                            <h3 class="text-lg font-medium text-zinc-100">Automated Video Generator</h3>
-                            <p class="text-sm text-zinc-400">Content creation pipeline combining LLMs, TTS, and video rendering.</p>
-                        </div>
-                        <ul class="text-sm text-zinc-400 space-y-2 list-disc list-inside">
-                            <li>Programmed an end-to-end Python agent to generate fact-based video content autonomously.</li>
-                            <li>Synchronized AI-generated audio (gTTS) with dynamic text overlays using MoviePy and FFmpeg.</li>
-                            <li>Designed state-management using JSON to guarantee content uniqueness across executions.</li>
-                        </ul>
-                    </div>
-                    <div class="pt-6 space-y-4">
-                        <div class="flex gap-2 text-xs font-mono text-zinc-500">
-                            <span>Python</span> • <span>FFmpeg</span> • <span>MoviePy</span>
-                        </div>
-                        <div class="flex gap-4 text-sm font-medium">
-                            <a href="https://github.com/Viidhii19/Fact_video_generator" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Source</a>
-                            <a href="https://drive.google.com/file/d/1HUqh7W1xH0wEY7x5zF5XiaKxN82b0y8v/view?pli=1" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group p-6 rounded-lg border border-zinc-800/60 bg-zinc-900/20 hover:border-zinc-600 transition-colors flex flex-col h-full">
-                    <div class="flex-grow space-y-4">
-                        <div class="space-y-1">
-                            <h3 class="text-lg font-medium text-zinc-100">IoT Heart Monitoring System</h3>
-                            <p class="text-sm text-zinc-400">Hardware-software integration for real-time biometric tracking.</p>
-                        </div>
-                        <ul class="text-sm text-zinc-400 space-y-2 list-disc list-inside">
-                            <li>Engineered a smart seatbelt embedded with pulse sensors to monitor passenger vitals in transit.</li>
-                            <li>Developed a fault-tolerant logic board (C/C++) to trigger emergency protocols during anomalies.</li>
-                            <li>Optimized sensor data read rates to ensure continuous, reliable monitoring without latency.</li>
-                        </ul>
-                    </div>
-                    <div class="pt-6 space-y-4">
-                        <div class="flex gap-2 text-xs font-mono text-zinc-500">
-                            <span>C/C++</span> • <span>Arduino</span> • <span>IoT</span>
-                        </div>
-                        <div class="flex gap-4 text-sm font-medium">
-                            <a href="https://github.com/JalChauhan/Seatbelt-based-Heart-Monitoring-System_Jal-Chauhan_23" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Source</a>
-                            <a href="https://drive.google.com/file/d/1-UWxLSggBsvefDUxqmtRvdPj_fGyDl87/view" target="_blank" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">Demo</a>
-                        </div>
+                <div class="space-y-4 text-center md:text-left">
+                    <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mx-auto md:mx-0 mb-6 text-brand font-bold text-xl">03</div>
+                    <h3 class="text-xl font-heading font-bold">Infrastructure</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Tools and platforms for deploying and managing robust codebases.</p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-2">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Streamlit</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Firebase</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">GitHub</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full border border-gray-200">Git</span>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="experience" class="space-y-10">
-            <h2 class="text-2xl font-semibold tracking-tight text-zinc-100">Experience</h2>
+    <section id="projects" class="py-24 bg-light">
+        <div class="max-w-6xl mx-auto px-6 space-y-16">
+            <div class="text-center">
+                <h2 class="text-3xl font-heading font-bold uppercase tracking-wide section-title inline-block">Projects</h2>
+                <p class="mt-6 text-gray-500 max-w-2xl mx-auto">Featured architectures and models I have engineered.</p>
+            </div>
             
-            <div class="relative border-l border-zinc-800 ml-3 space-y-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <div class="relative pl-8">
-                    <div class="absolute w-3 h-3 bg-zinc-400 rounded-full -left-[6.5px] top-1.5 ring-4 ring-zinc-950"></div>
-                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
-                        <h3 class="text-lg font-medium text-zinc-100">AI/ML Intern <span class="text-zinc-500 font-normal">— Param Group of Companies</span></h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 sm:mt-0">Jan 2026 — Present</span>
+                <article class="gajda-card overflow-hidden flex flex-col">
+                    <div class="h-64 w-full bg-gray-200 relative border-b border-gray-100 flex justify-center items-center">
+                        <span class="text-gray-400 font-mono text-sm font-semibold"><img src="movie_recommend.jpg"></span>
                     </div>
-                    <ul class="text-sm text-zinc-400 space-y-2 list-none">
-                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Training and optimizing ANN and CNN architectures on high-dimensional datasets for computer vision tasks.</li>
-                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Implementing real-time object detection systems utilizing YOLO algorithms.</li>
-                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Evaluating model integrity via precision/recall, F1-scores, and confusion matrices.</li>
-                    </ul>
-                </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-heading font-bold">Movie Recommendation System</h3>
+                            <a href="https://github.com/Viidhii19/Collaborative_Movie_Recommendation_System" target="_blank" class="text-brand text-sm font-bold hover:underline">Source</a>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            Engineered a Transformer-based collaborative movie recommendation system that models user watch history as sequential tokens, leveraging multi-head self-attention in PyTorch to predict next-movie preferences from large-scale Netflix rating data.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Python</span>
+                            <span class="text-xs font-bold text-gray-300">•</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">PyTorch</span>
+                            <span class="text-xs font-bold text-gray-300">•</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Transformer Encoder (Self-Attention)</span>
+                            <span class="text-xs font-bold text-gray-300">•</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Pandas/NumPy</span>
+                            <span class="text-xs font-bold text-gray-300">•</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Sequential Data Processing</span>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="relative pl-8">
-                    <div class="absolute w-3 h-3 bg-zinc-800 rounded-full -left-[6.5px] top-1.5 ring-4 ring-zinc-950"></div>
-                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
-                        <h3 class="text-lg font-medium text-zinc-100">Java Development Intern <span class="text-zinc-500 font-normal">— Cognifyz Technologies</span></h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 sm:mt-0">Dec 2024 — Jan 2025</span>
+                <article class="gajda-card overflow-hidden flex flex-col">
+                    <div class="h-64 w-full bg-gray-200 relative border-b border-gray-100 flex justify-center items-center">
+                        <span class="text-gray-400 font-mono text-sm font-semibold"><img src="restaurant.jpg"></span>
                     </div>
-                    <ul class="text-sm text-zinc-400 space-y-2 list-none">
-                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Engineered and debugged Java backend modules strictly adhering to OOP design principles.</li>
-                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Optimized system execution by integrating multithreading and advanced exception handling.</li>
-                    </ul>
-                </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-heading font-bold">Restaurant Review Analysis System</h3>
+                            <a href="https://github.com/Viidhii19/Restaurant-Review-Analysis-System" target="_blank" class="text-brand text-sm font-bold hover:underline">Source</a>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            Architected a Retrieval-Augmented Generation pipeline utilizing semantic search to process and summarize massive datasets of unstructured customer feedback. Integrated Ollama embeddings with ChromaDB.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">LangChain</span>
+                            <span class="text-xs font-bold text-gray-300">•</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">ChromaDB</span>
+                            <span class="text-xs font-bold text-gray-300">•</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Llama 3.2</span>
+                            <span class="text-xs font-bold text-gray-300">•</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">RAG</span>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="relative pl-8">
-                    <div class="absolute w-3 h-3 bg-zinc-800 rounded-full -left-[6.5px] top-1.5 ring-4 ring-zinc-950"></div>
-                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
-                        <h3 class="text-lg font-medium text-zinc-100">Data Analytics Intern <span class="text-zinc-500 font-normal">— YBI Foundation</span></h3>
-                        <span class="text-sm font-mono text-zinc-500 mt-1 sm:mt-0">Aug 2023 — Sep 2023</span>
+                <article class="gajda-card overflow-hidden flex flex-col">
+                    <div class="h-64 w-full bg-gray-200 relative border-b border-gray-100 flex justify-center items-center">
+                        <span class="text-gray-400 font-mono text-sm font-semibold"><img src="customer care.jpg"></span>
                     </div>
-                    <ul class="text-sm text-zinc-400 space-y-2 list-none">
-                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Constructed end-to-end data preprocessing pipelines using Python and SQL.</li>
-                        <li class="relative before:content-['▹'] before:absolute before:-left-4 before:text-zinc-600">Applied statistical modeling techniques to extract measurable insights from disparate datasets.</li>
-                    </ul>
-                </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-heading font-bold">Customer Care Q&A</h3>
+                            <a href="https://github.com/Viidhii19/CustomerCare-Q-A" target="_blank" class="text-brand text-sm font-bold hover:underline">Source</a>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            Engineered an autonomous support agent integrating dense vector search (FAISS) and Google Gemini 2.5 Flash for accurate contextual responses from custom knowledge bases.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Gemini API</span>
+                            <span class="text-xs font-bold text-gray-300">•</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">FAISS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="gajda-card overflow-hidden flex flex-col">
+                    <div class="h-64 w-full bg-gray-200 relative border-b border-gray-100 flex justify-center items-center">
+                        <span class="text-gray-400 font-mono text-sm font-semibold"><img src="fact video.jpg"></span>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="text-xl font-heading font-bold">Fact Video Generator</h3>
+                            <a href="https://github.com/Viidhii19/Fact_video_generator" target="_blank" class="text-brand text-sm font-bold hover:underline">Source</a>
+                        </div>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            Programmed an end-to-end Python pipeline combining LLMs, Text-to-Speech (gTTS), and automated video rendering via FFmpeg to generate automated content.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Python</span>
+                            <span class="text-xs font-bold text-gray-300">•</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">FFmpeg</span>
+                            <span class="text-xs font-bold text-gray-300">•</span>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">MoviePy</span>
+                        </div>
+                    </div>
+                </article>
+
+                
 
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="skills" class="space-y-10">
-            <h2 class="text-2xl font-semibold tracking-tight text-zinc-100">Skills & Tooling</h2>
+    <section id="experience" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 space-y-16">
+            <div class="text-center">
+                <h2 class="text-3xl font-heading font-bold uppercase tracking-wide section-title inline-block">Experience</h2>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="space-y-4">
-                    <h3 class="text-sm font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-800 pb-2">Languages</h3>
-                    <ul class="text-sm text-zinc-300 space-y-2">
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>C/C++</li>
-                        <li>SQL</li>
-                    </ul>
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
+                
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-brand shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 text-white">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] gajda-card p-6 border border-gray-100">
+                        <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
+                            <h3 class="font-heading font-bold text-lg text-dark">AI/ML Intern</h3>
+                            <span class="text-brand font-semibold text-xs mt-1 sm:mt-0">Jan 2026 - Present</span>
+                        </div>
+                        <div class="text-gray-400 font-semibold text-sm mb-3">Param Consulting Services, Inc.</div>
+                        <ul class="text-sm text-gray-500 space-y-2 list-disc list-inside">
+                            <li>Training ANN and CNN architectures for computer vision tasks.</li>
+                            <li>Implementing real-time YOLO object detection algorithms.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="space-y-4">
-                    <h3 class="text-sm font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-800 pb-2">AI & Architecture</h3>
-                    <ul class="text-sm text-zinc-300 space-y-2">
-                        <li>LangChain & LLMs</li>
-                        <li>Google Gemini API</li>
-                        <li>Retrieval-Augmented Generation (RAG)</li>
-                        <li>FAISS & HuggingFace</li>
-                    </ul>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-gray-300 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 text-white">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] gajda-card p-6 border border-gray-100">
+                        <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
+                            <h3 class="font-heading font-bold text-lg text-dark">Java Dev Intern</h3>
+                            <span class="text-gray-500 font-semibold text-xs mt-1 sm:mt-0">Dec 2024 - Jan 2025</span>
+                        </div>
+                        <div class="text-gray-400 font-semibold text-sm mb-3">Cognifyz Technologies</div>
+                        <ul class="text-sm text-gray-500 space-y-2 list-disc list-inside">
+                            <li>Engineered Java backend modules emphasizing OOP principles.</li>
+                            <li>Integrated multithreading for optimized system execution.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="space-y-4">
-                    <h3 class="text-sm font-mono text-zinc-500 uppercase tracking-widest border-b border-zinc-800 pb-2">Infrastructure & Tools</h3>
-                    <ul class="text-sm text-zinc-300 space-y-2">
-                        <li>Git & GitHub</li>
-                        <li>Streamlit</li>
-                        <li>Firebase</li>
-                        <li>Jupyter & VS Code</li>
-                    </ul>
-                </div>
+                
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="certifications" class="space-y-6 border-t border-zinc-800/50 pt-10">
-            <h2 class="text-sm font-mono text-zinc-500 uppercase tracking-widest">Select Certifications</h2>
-            <div class="flex flex-wrap gap-3 text-sm text-zinc-400">
-                <span class="px-3 py-1 bg-zinc-900 rounded border border-zinc-800">Google Cybersecurity</span>
-                <span class="px-3 py-1 bg-zinc-900 rounded border border-zinc-800">Cisco Ethical Hacker</span>
-                <span class="px-3 py-1 bg-zinc-900 rounded border border-zinc-800">Kaggle AI Agents</span>
-                <span class="px-3 py-1 bg-zinc-900 rounded border border-zinc-800">Code Unnati Advanced 3.0</span>
-            </div>
-        </section>
-
-        <footer id="contact" class="pt-24 pb-8 space-y-8 border-t border-zinc-800/50">
-            <div class="space-y-2">
-                <h2 class="text-2xl font-semibold tracking-tight text-zinc-100">Let's Build.</h2>
-                <p class="text-zinc-400">Open for roles where I can deploy models and scale systems.</p>
-            </div>
+    <footer id="contact" class="bg-dark pt-20 pb-10 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-heading font-bold text-white mb-6">Let's Build Something.</h2>
+            <p class="text-gray-400 mb-10 max-w-lg mx-auto">Currently open to roles where I can architect intelligent systems and scale data pipelines.</p>
             
-            <div class="flex flex-wrap gap-6 text-sm font-medium">
-                <a href="mailto:vidhigandhi2004@gmail.com" class="text-zinc-100 hover:text-zinc-300 transition-colors border-b border-zinc-700 hover:border-zinc-400 pb-0.5">
-                    vidhigandhi2004@gmail.com
-                </a>
-                <a href="https://github.com/Viidhii19" target="_blank" class="text-zinc-400 hover:text-zinc-200 transition-colors">GitHub</a>
-                <a href="https://www.linkedin.com/in/vidhi-g-a23990280/" target="_blank" class="text-zinc-400 hover:text-zinc-200 transition-colors">LinkedIn</a>
-            </div>
+            <a href="mailto:vidhigandhi2004@gmail.com" class="inline-block px-8 py-4 bg-brand text-white font-heading font-bold text-sm uppercase tracking-wider rounded shadow-lg shadow-blue-500/20 hover:bg-blue-600 transition-colors mb-16">
+                Email Me
+            </a>
 
-            <div class="pt-16 text-xs text-zinc-600 font-mono">
-                &copy; 2026 Vidhi Gandhi. No frameworks, pure code.
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-gray-500 text-sm font-semibold">
+                    &copy; 2026 Vidhi Gandhi.
+                </div>
+                <div class="flex gap-6 text-sm font-heading font-bold uppercase tracking-widest text-gray-400">
+                    <a href="https://github.com/Viidhii19" class="hover:text-white transition-colors">GitHub</a>
+                    <a href="https://www.linkedin.com/in/vidhi-g-a23990280/" class="hover:text-white transition-colors">LinkedIn</a>
+                </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
-    </main>
 </body>
 </html>
