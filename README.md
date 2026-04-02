@@ -16,11 +16,11 @@ A clean, responsive portfolio website showcasing my work, skills, and achievemen
 
 **🧩 Sections**
 
-Home: Brief introduction and tagline
-About: Education, interests, and technical overview
-Projects: Highlighted academic and personal projects
-Skills: Tools, languages, and technologies mastered
-Contact: Direct email and LinkedIn integration
+- Home: Brief introduction and tagline
+- About: Education, interests, and technical overview
+- Projects: Highlighted academic and personal projects
+- Skills: Tools, languages, and technologies mastered
+- Contact: Direct email and LinkedIn integration
 
 **Output**
 https://viidhii19.github.io/portfolio/
